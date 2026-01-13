@@ -265,9 +265,24 @@ function createEditModeUI() {
         gap: 10px;
     `;
 
-    // Export button
+    // Publish button
+    const publishBtn = document.createElement('button');
+    publishBtn.innerHTML = '🚀 Publish Changes';
+    publishBtn.style.cssText = `
+        background: rgba(0, 255, 0, 0.9);
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        font-family: monospace;
+    `;
+    publishBtn.onclick = publishChanges;
+
+    // Export button (backup)
     const exportBtn = document.createElement('button');
-    exportBtn.innerHTML = '📥 Export HTML';
+    exportBtn.innerHTML = '📥 Download HTML';
     exportBtn.style.cssText = `
         background: rgba(0, 255, 255, 0.9);
         color: black;
@@ -278,7 +293,7 @@ function createEditModeUI() {
         cursor: pointer;
         font-family: monospace;
     `;
-    exportBtn.onclick = exportHTML;
+    exportBtn.onclick = downloadHTML;
 
     // Clear changes button
     const clearBtn = document.createElement('button');
@@ -310,6 +325,7 @@ function createEditModeUI() {
     counter.innerHTML = '0 changes';
 
     controls.appendChild(counter);
+    controls.appendChild(publishBtn);
     controls.appendChild(exportBtn);
     controls.appendChild(clearBtn);
 
@@ -327,24 +343,96 @@ function updateChangeCounter() {
     }
 }
 
-function exportHTML() {
-    const html = document.documentElement.outerHTML;
+async function publishChanges() {
+    const changes = JSON.parse(localStorage.getItem(CHANGES_KEY) || '[]');
 
-    // Copy to clipboard
-    navigator.clipboard.writeText(html).then(() => {
-        alert('✅ HTML copied to clipboard!\n\nYou can paste this into your HTML file to save your changes permanently.');
-    }).catch(err => {
-        // Fallback: download as file
+    if (changes.length === 0) {
+        alert('No changes to publish!');
+        return;
+    }
+
+    const confirmed = confirm(
+        `🚀 Ready to publish ${changes.length} change${changes.length !== 1 ? 's' : ''}?\n\n` +
+        `This will:\n` +
+        `1. Download the updated HTML file\n` +
+        `2. You move it to replace the original\n` +
+        `3. Run ./publish.sh to push to GitHub\n` +
+        `4. Changes go live in ~1 minute\n\n` +
+        `Continue?`
+    );
+
+    if (!confirmed) return;
+
+    const publishBtn = event.target;
+    const originalText = publishBtn.innerHTML;
+    publishBtn.innerHTML = '⏳ Publishing...';
+    publishBtn.disabled = true;
+
+    try {
+        // Get current page filename
+        const filename = window.location.pathname.split('/').pop() || 'index.html';
+        const html = document.documentElement.outerHTML;
+
+        // Download the file
         const blob = new Blob([html], { type: 'text/html' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'stats-edited.html';
+        a.download = filename;
         a.click();
         URL.revokeObjectURL(url);
-    });
 
-    console.log('📥 HTML exported');
+        publishBtn.innerHTML = '✅ Downloaded!';
+
+        // Show next steps
+        setTimeout(() => {
+            const instructions =
+                `✅ File downloaded: ${filename}\n\n` +
+                `📋 Next steps:\n` +
+                `1. Move ${filename} from Downloads to project folder\n` +
+                `   (Replace the existing file)\n\n` +
+                `2. Open Terminal and run:\n` +
+                `   cd ~/Desktop/blockbox-landing\n` +
+                `   ./publish.sh\n\n` +
+                `3. Changes will be live on GitHub Pages in ~1 minute!\n\n` +
+                `Clear your changes now?`;
+
+            if (confirm(instructions)) {
+                localStorage.removeItem(CHANGES_KEY);
+                location.reload();
+            } else {
+                publishBtn.innerHTML = originalText;
+                publishBtn.disabled = false;
+            }
+        }, 500);
+
+    } catch (error) {
+        console.error('Publish error:', error);
+        publishBtn.innerHTML = '❌ Failed';
+        alert('Failed to download file: ' + error.message);
+
+        setTimeout(() => {
+            publishBtn.innerHTML = originalText;
+            publishBtn.disabled = false;
+        }, 2000);
+    }
+}
+
+function downloadHTML() {
+    const html = document.documentElement.outerHTML;
+    const filename = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Download as file
+    const blob = new Blob([html], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename.replace('.html', '-edited.html');
+    a.click();
+    URL.revokeObjectURL(url);
+
+    alert('✅ HTML file downloaded!\n\nYou can use this as a backup or to manually replace the original file.');
+    console.log('📥 HTML downloaded');
 }
 
 function clearAllChanges() {
