@@ -1758,3 +1758,36 @@ footer p {
 .rule.allowed {
     border-left-color: #10b981;
 }
+
+/* SIMPLIFIED HERO - CLEAN & ELEGANT */
+.hero-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.simple-device-showcase {
+    text-align: center;
+}
+
+.device-caption {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+/* Simplified responsive */
+@media (max-width: 968px) {
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+}
