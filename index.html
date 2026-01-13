@@ -72,17 +72,9 @@
             <div class="hero-split">
                 <div class="hero-left">
                     <h1>Take Back Your Life</h1>
-                    <p class="tagline">BlockBox is a physical device that blocks distracting content across your entire home network—and locks your rules so you can't undo them when tempted.</p>
-
-                    <div class="key-points">
-                        <div class="point"><span class="check">✓</span> Block what steals your time: social media, gaming, streaming, adult content, news</div>
-                        <div class="point"><span class="check">✓</span> Works on every device in your home automatically</div>
-                        <div class="point"><span class="check">✓</span> Lock your rules for weeks or months—no backdoor, no reset button</div>
-                        <div class="point"><span class="check">✓</span> Break free from the dopamine cycle destroying your focus</div>
-                    </div>
 
                     <form id="hero-form" class="email-form">
-                        <input type="email" id="hero-email" placeholder="Enter your email" required>
+                        <input type="email" id="hero-email" name="hero-email" placeholder="Enter your email" required autocomplete="email">
                         <button type="submit" class="cta-button">Join Waitlist</button>
                     </form>
                     <p class="form-subtext">$149 one-time. No subscription. Own it forever.</p>
@@ -90,13 +82,18 @@
 
                 <div class="hero-right">
                     <div class="network-diagram">
-                        <!-- Internet -->
+                        <!-- Internet (Wide) -->
                         <div class="network-node internet">
                             <div class="css-internet-icon"></div>
                             <div class="node-label">INTERNET</div>
+                            <div class="wifi-symbol">
+                                <div class="wifi-wave"></div>
+                                <div class="wifi-wave"></div>
+                                <div class="wifi-wave"></div>
+                            </div>
                         </div>
 
-                        <div class="network-line"></div>
+                        <div class="network-line wide-line"></div>
 
                         <!-- Router -->
                         <div class="network-node router">
@@ -104,7 +101,7 @@
                             <div class="node-label">YOUR ROUTER</div>
                         </div>
 
-                        <div class="network-line highlight"></div>
+                        <div class="network-line highlight narrow-line"></div>
 
                         <!-- BlockBox -->
                         <div class="network-node blockbox">
@@ -126,15 +123,15 @@
                             <div class="filter-tag">Custom Sites</div>
                         </div>
 
-                        <div class="network-split">
+                        <div class="network-split wide-split">
                             <div class="split-line"></div>
                             <div class="split-line"></div>
                             <div class="split-line"></div>
                             <div class="split-line"></div>
                         </div>
 
-                        <!-- Devices -->
-                        <div class="protected-devices">
+                        <!-- Devices (Wide spread) -->
+                        <div class="protected-devices wide-devices">
                             <div class="device-mini">
                                 <div class="css-phone-icon"></div>
                                 <div class="device-label">PHONE</div>
@@ -162,35 +159,35 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
+    <!-- What It Does Section -->
+    <section class="what-it-does">
         <div class="container">
-            <h2>How BlockBox Works</h2>
-            <p class="section-intro">Four simple steps to break free from digital distractions.</p>
+            <h2>A Physical Device That Actually Works</h2>
+            <p class="section-intro">BlockBox sits between your router and the internet. It blocks distracting content across your entire home network—and locks your rules so you can't undo them when tempted.</p>
 
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <h3>Plug In</h3>
-                    <p>Connect to your router. Works with all devices on your network instantly—phones, laptops, gaming consoles, smart TVs.</p>
+            <div class="key-features">
+                <div class="feature-point">
+                    <div class="feature-icon">BLOCK</div>
+                    <h3>Block What Steals Your Time</h3>
+                    <p>Social media, gaming, streaming, adult content, news—you choose what to filter.</p>
                 </div>
 
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <h3>Choose What to Block</h3>
-                    <p>You're in control. Block everything, or just social media. Block gaming sites on weekdays only. Block adult content 24/7. Or create custom rules per device. Whatever you need.</p>
+                <div class="feature-point">
+                    <div class="feature-icon">WIFI</div>
+                    <h3>Works Over WiFi</h3>
+                    <p>Every device in your home is automatically protected. Wireless connection stays strong.</p>
                 </div>
 
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <h3>Lock It</h3>
-                    <p>Set your commitment period: 1 week to 1 year. Once locked, there's no easy way out—even for you. Add an accountability partner for extra protection.</p>
+                <div class="feature-point">
+                    <div class="feature-icon">LOCK</div>
+                    <h3>Lock Your Rules</h3>
+                    <p>Set commitment periods from 1 week to 1 year. No backdoor, no reset button.</p>
                 </div>
 
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <h3>Stay Free</h3>
-                    <p>Live your life without constant digital temptation. Emergency unlock requires 48-hour wait + partner approval.</p>
+                <div class="feature-point">
+                    <div class="feature-icon">FREE</div>
+                    <h3>Break The Dopamine Cycle</h3>
+                    <p>Stop the constant temptation. Emergency unlock requires 48-hour wait.</p>
                 </div>
             </div>
         </div>
@@ -331,7 +328,7 @@
             <p class="section-intro">No spam. Just an email when BlockBox is ready to ship.</p>
 
             <form id="main-form" class="email-form-large">
-                <input type="email" id="main-email" placeholder="Enter your email" required>
+                <input type="email" id="main-email" name="main-email" placeholder="Enter your email" required autocomplete="email">
                 <button type="submit" class="cta-button">Get Early Access</button>
             </form>
 

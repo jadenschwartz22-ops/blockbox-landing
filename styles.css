@@ -293,6 +293,60 @@ body {
     flex: 1;
 }
 
+/* What It Does Section */
+.what-it-does {
+    padding: 100px 20px;
+    background-color: var(--bg-primary);
+}
+
+.what-it-does h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.key-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 4rem auto 0;
+}
+
+.feature-point {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.feature-point h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-point p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1.0625rem;
+}
+
 /* How It Works Section */
 .how-it-works {
     padding: 80px 20px;
@@ -887,12 +941,76 @@ footer p {
     margin-top: 8px;
 }
 
+/* WiFi Symbol */
+.wifi-symbol {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.wifi-wave {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-45deg);
+    animation: wifiPulse 2s ease-in-out infinite;
+}
+
+.wifi-wave:nth-child(2) {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+    opacity: 0.7;
+    animation-delay: 0.2s;
+}
+
+.wifi-wave:nth-child(3) {
+    width: 36px;
+    height: 36px;
+    border-width: 3px;
+    opacity: 0.5;
+    animation-delay: 0.4s;
+}
+
+@keyframes wifiPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: rotate(-45deg) scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(-45deg) scale(1.1);
+    }
+}
+
+/* Network Lines with Funnel Effect */
 .network-line {
     width: 4px;
-    height: 45px;
+    height: 50px;
     background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 100%);
     border-radius: 2px;
     position: relative;
+    margin: 0 auto;
+}
+
+.network-line.wide-line {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.3) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.1) 100%);
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
+}
+
+.network-line.narrow-line {
+    width: 80px;
+    height: 50px;
+    clip-path: polygon(30% 0, 70% 0, 45% 100%, 55% 100%);
 }
 
 .network-line::after {
@@ -941,25 +1059,39 @@ footer p {
 
 .network-split {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
+    position: relative;
+}
+
+.network-split.wide-split {
+    max-width: 500px;
+    gap: 40px;
 }
 
 .split-line {
-    width: 3px;
-    height: 30px;
-    background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+    width: 4px;
+    height: 35px;
+    background: linear-gradient(180deg, #10b981 0%, transparent 100%);
+    border-radius: 2px;
+    animation: lineGlow 2s ease-in-out infinite;
 }
 
 .protected-devices {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px;
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.protected-devices.wide-devices {
+    max-width: 600px;
+    gap: 30px;
 }
 
 .device-item {
