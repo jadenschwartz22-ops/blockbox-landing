@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .good-path,
         .blockbox-badge,
         .stat-card,
-        .scattered-visual,
-        .focused-visual
+        .stat-card-large,
+        .flow-step,
+        .blocks-list,
+        .key-feature,
+        .impact-visual
     `);
 
     // Create intersection observer
