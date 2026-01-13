@@ -890,3 +890,216 @@ footer p {
         font-size: 2rem;
     }
 }
+
+/* Network Diagram Styles */
+.network-diagram {
+    max-width: 900px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.network-node {
+    text-align: center;
+    position: relative;
+}
+
+.node-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.network-node p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.network-node.blockbox {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, transparent 100%);
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+}
+
+.node-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+.network-line {
+    width: 3px;
+    height: 40px;
+    background: var(--border);
+}
+
+.network-line.highlight {
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-hover) 100%);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+.network-split {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.split-line {
+    width: 3px;
+    height: 30px;
+    background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+}
+
+.protected-devices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.device-item {
+    background: var(--bg-secondary);
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.device-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.device-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.device-item p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.protected {
+    display: block;
+    font-size: 0.8125rem;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.diagram-caption {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Responsive for Network Diagram */
+@media (max-width: 768px) {
+    .protected-devices {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .network-split {
+        gap: 15px;
+    }
+
+    .device-icon {
+        font-size: 2rem;
+    }
+
+    .node-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Device Control Section */
+.device-control {
+    padding: 80px 20px;
+    background-color: var(--bg-primary);
+}
+
+.control-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+
+.control-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.control-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+}
+
+.control-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.control-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.control-rules {
+    text-align: left;
+}
+
+.rule {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    border-left: 3px solid var(--border);
+}
+
+.rule:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .control-examples {
+        grid-template-columns: 1fr;
+    }
+}

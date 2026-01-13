@@ -103,15 +103,66 @@
             <h2>How BlockBox Works</h2>
 
             <div class="product-visual">
-                <div class="mockup-placeholder">
-                    <div class="device-mockup">
+                <div class="network-diagram">
+                    <!-- Internet -->
+                    <div class="network-node internet">
+                        <div class="node-icon">🌐</div>
+                        <p>Internet</p>
+                    </div>
+
+                    <div class="network-line"></div>
+
+                    <!-- Router -->
+                    <div class="network-node router">
+                        <div class="node-icon">📡</div>
+                        <p>Your Router</p>
+                    </div>
+
+                    <div class="network-line highlight"></div>
+
+                    <!-- BlockBox (hero device) -->
+                    <div class="network-node blockbox">
                         <div class="device-body">
                             <div class="device-light"></div>
                             <div class="device-port"></div>
                         </div>
-                        <p class="device-label">BlockBox Device</p>
+                        <p>BlockBox</p>
+                        <span class="node-badge">Filters Everything</span>
+                    </div>
+
+                    <div class="network-split">
+                        <div class="split-line"></div>
+                        <div class="split-line"></div>
+                        <div class="split-line"></div>
+                        <div class="split-line"></div>
+                    </div>
+
+                    <!-- Protected Devices -->
+                    <div class="protected-devices">
+                        <div class="device-item">
+                            <div class="device-icon">📱</div>
+                            <p>Phone</p>
+                            <span class="protected">✓ Protected</span>
+                        </div>
+                        <div class="device-item">
+                            <div class="device-icon">💻</div>
+                            <p>Laptop</p>
+                            <span class="protected">✓ Protected</span>
+                        </div>
+                        <div class="device-item">
+                            <div class="device-icon">📺</div>
+                            <p>Smart TV</p>
+                            <span class="protected">✓ Protected</span>
+                        </div>
+                        <div class="device-item">
+                            <div class="device-icon">🎮</div>
+                            <p>Console</p>
+                            <span class="protected">✓ Protected</span>
+                        </div>
                     </div>
                 </div>
+
+                <p class="diagram-caption">One device protects your entire network—every phone, computer, TV, and gaming console.</p>
             </div>
 
             <div class="process-steps">
@@ -137,6 +188,46 @@
                     <div class="process-number">4</div>
                     <h3>Stay Free</h3>
                     <p>Live your life without constant digital temptation. Emergency unlock requires 48-hour wait + partner approval.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Per Device Section -->
+    <section class="device-control">
+        <div class="container">
+            <h2>Control Each Device Differently</h2>
+            <p class="section-intro">Block social media on your phone during work hours. Allow your laptop for everything. Block gaming consoles on weekdays. You decide.</p>
+
+            <div class="control-examples">
+                <div class="control-card">
+                    <div class="control-icon">📱</div>
+                    <h3>Son's Phone</h3>
+                    <div class="control-rules">
+                        <div class="rule">🚫 Social media blocked</div>
+                        <div class="rule">🚫 Gaming after 9pm</div>
+                        <div class="rule">✓ Educational sites allowed</div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <div class="control-icon">💻</div>
+                    <h3>Your Laptop</h3>
+                    <div class="control-rules">
+                        <div class="rule">🚫 Social media 9am-5pm</div>
+                        <div class="rule">✓ Work sites always allowed</div>
+                        <div class="rule">✓ Everything else after 5pm</div>
+                    </div>
+                </div>
+
+                <div class="control-card">
+                    <div class="control-icon">📺</div>
+                    <h3>Living Room TV</h3>
+                    <div class="control-rules">
+                        <div class="rule">🚫 Streaming until homework done</div>
+                        <div class="rule">✓ Family movie night Friday</div>
+                        <div class="rule">✓ YouTube Kids only</div>
+                    </div>
                 </div>
             </div>
         </div>
