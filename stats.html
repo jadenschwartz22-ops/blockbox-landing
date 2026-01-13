@@ -93,6 +93,50 @@
             text-align: center;
         }
 
+        .section-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .section-nav-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-nav-item:hover {
+            color: var(--neon-cyan);
+            border-color: var(--neon-cyan);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .section-divider {
+            margin: 6rem 0 4rem 0;
+            padding-top: 4rem;
+            border-top: 3px solid rgba(0, 255, 255, 0.3);
+        }
+
         .impact-number {
             font-size: 5rem;
             font-weight: 900;
@@ -125,13 +169,31 @@
         </div>
     </section>
 
+    <!-- Section Navigation -->
+    <nav class="section-nav">
+        <div class="container">
+            <ul class="section-nav-list">
+                <li><a href="#screen-time" class="section-nav-item">Screen Time</a></li>
+                <li><a href="#attention" class="section-nav-item">Attention Span</a></li>
+                <li><a href="#social-media" class="section-nav-item">Social Media</a></li>
+                <li><a href="#mental-health" class="section-nav-item">Mental Health</a></li>
+                <li><a href="#loneliness" class="section-nav-item">Loneliness</a></li>
+                <li><a href="#addiction" class="section-nav-item">Addiction</a></li>
+                <li><a href="#adult-content" class="section-nav-item">Adult Content</a></li>
+                <li><a href="#gaming" class="section-nav-item">Gaming</a></li>
+                <li><a href="#advertising" class="section-nav-item">Advertising</a></li>
+                <li><a href="#physical-health" class="section-nav-item">Physical Health</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Screen Time Section -->
     <section class="problem-section">
         <div class="container">
             <a href="index.html" class="back-link">← Back to home</a>
 
-            <div class="category-section">
-                <h2 class="category-title">Screen Time</h2>
+            <div id="screen-time" class="category-section section-divider">
+                <h2 class="category-title">📊 Screen Time</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">4.8</div>
@@ -176,8 +238,8 @@
             </div>
 
             <!-- Attention Span Section -->
-            <div class="category-section">
-                <h2 class="category-title">Your Attention Span is Collapsing</h2>
+            <div id="attention" class="category-section section-divider">
+                <h2 class="category-title">⏱️ Your Attention Span is Collapsing</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">47</div>
@@ -236,8 +298,8 @@
             </div>
 
             <!-- Social Media Section -->
-            <div class="category-section">
-                <h2 class="category-title">Social Media Addiction</h2>
+            <div id="social-media" class="category-section section-divider">
+                <h2 class="category-title">📱 Social Media Addiction</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">2.5</div>
@@ -274,8 +336,8 @@
             </div>
 
             <!-- Depression & Mental Health Section -->
-            <div class="category-section">
-                <h2 class="category-title">Depression & Mental Health Crisis</h2>
+            <div id="mental-health" class="category-section section-divider">
+                <h2 class="category-title">😰 Depression & Mental Health Crisis</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">3x</div>
@@ -330,8 +392,8 @@
             </div>
 
             <!-- Social Isolation Section -->
-            <div class="category-section">
-                <h2 class="category-title">The Loneliness Epidemic</h2>
+            <div id="loneliness" class="category-section section-divider">
+                <h2 class="category-title">💔 The Loneliness Epidemic</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">61%</div>
@@ -389,8 +451,8 @@
             </div>
 
             <!-- Dopamine & Addiction Section -->
-            <div class="category-section">
-                <h2 class="category-title">Dopamine Nation: The Brain on Tech</h2>
+            <div id="addiction" class="category-section section-divider">
+                <h2 class="category-title">🎰 Dopamine Nation: The Brain on Tech</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">400%</div>
@@ -441,8 +503,8 @@
             </div>
 
             <!-- Adult Content Section -->
-            <div class="category-section">
-                <h2 class="category-title">Adult Content</h2>
+            <div id="adult-content" class="category-section section-divider">
+                <h2 class="category-title">🔞 Adult Content</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">64%</div>
@@ -466,8 +528,8 @@
             </div>
 
             <!-- Gaming Section -->
-            <div class="category-section">
-                <h2 class="category-title">Gaming Addiction</h2>
+            <div id="gaming" class="category-section section-divider">
+                <h2 class="category-title">🎮 Gaming Addiction</h2>
                 <div class="stats-grid">
                     <div class="stat-card-large">
                         <div class="stat-number">8.5</div>
@@ -491,8 +553,8 @@
             </div>
 
             <!-- Advertising Section -->
-            <div class="category-section">
-                <h2 class="category-title">The Advertising Assault on Your Brain</h2>
+            <div id="advertising" class="category-section section-divider">
+                <h2 class="category-title">📺 The Advertising Assault on Your Brain</h2>
                 <p class="section-intro" style="text-align: center; font-size: 1.3rem; color: var(--neon-cyan); margin-bottom: 2rem;"><strong>Invent the disease. Sell the cure.</strong></p>
                 <div class="stats-grid">
                     <div class="stat-card-large">
@@ -571,8 +633,8 @@
             </div>
 
             <!-- Physical Health Section -->
-            <div class="category-section">
-                <h2 class="category-title">The Physical Toll: Your Body is Paying the Price</h2>
+            <div id="physical-health" class="category-section section-divider">
+                <h2 class="category-title">💪 The Physical Toll: Your Body is Paying the Price</h2>
                 <p class="section-intro" style="text-align: center; font-size: 1.3rem; color: var(--neon-red); margin-bottom: 2rem;"><strong>It's not just your mind. Your body is breaking down.</strong></p>
                 <div class="stats-grid">
                     <div class="stat-card-large">
