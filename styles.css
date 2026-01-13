@@ -1768,21 +1768,71 @@ footer p {
     font-weight: 400;
 }
 
-.simple-device-showcase {
+.simple-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+}
+
+.flow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.flow-item.highlight {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 16px;
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+.flow-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.protected-mini-devices {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
 }
 
 .device-caption {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    margin-top: 16px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Simplified responsive */
 @media (max-width: 968px) {
     .hero-subtitle {
         font-size: 1.25rem;
+    }
+
+    .simple-flow {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
     }
 }
 
