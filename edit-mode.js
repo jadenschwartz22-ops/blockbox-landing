@@ -58,13 +58,19 @@ function enableEditing() {
     const elements = document.querySelectorAll(editableSelectors);
 
     elements.forEach(el => {
-        // Skip if it's a container with other elements
-        if (el.children.length > 0 && !el.classList.contains('stat-number') && !el.classList.contains('impact-number')) {
+        // Skip source links and buttons
+        if (el.closest('.source') || el.closest('button') || el.closest('a') || el.tagName === 'A') {
             return;
         }
 
-        // Skip source links and buttons
-        if (el.closest('.source') || el.closest('button') || el.closest('a') || el.tagName === 'A') {
+        // Special handling for elements with child elements (like <p> with <strong>, <br>, <a>)
+        const hasOnlyTextAndFormatting = Array.from(el.children).every(child => {
+            return ['STRONG', 'EM', 'B', 'I', 'BR', 'SPAN', 'A'].includes(child.tagName);
+        });
+
+        // Skip if it's a container with complex children (not just text formatting)
+        if (el.children.length > 0 && !hasOnlyTextAndFormatting &&
+            !el.classList.contains('stat-number') && !el.classList.contains('impact-number')) {
             return;
         }
 
@@ -353,11 +359,11 @@ async function publishChanges() {
 
     const confirmed = confirm(
         `🚀 Ready to publish ${changes.length} change${changes.length !== 1 ? 's' : ''}?\n\n` +
-        `This will:\n` +
-        `1. Download the updated HTML file\n` +
-        `2. You move it to replace the original\n` +
-        `3. Run ./publish.sh to push to GitHub\n` +
-        `4. Changes go live in ~1 minute\n\n` +
+        `This will automatically:\n` +
+        `✓ Save the HTML file\n` +
+        `✓ Commit to git\n` +
+        `✓ Push to GitHub\n` +
+        `✓ Go live in ~1 minute\n\n` +
         `Continue?`
     );
 
@@ -373,43 +379,75 @@ async function publishChanges() {
         const filename = window.location.pathname.split('/').pop() || 'index.html';
         const html = document.documentElement.outerHTML;
 
-        // Download the file
-        const blob = new Blob([html], { type: 'text/html' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        a.click();
-        URL.revokeObjectURL(url);
+        // Try auto-publish via server first
+        const isLocalServer = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-        publishBtn.innerHTML = '✅ Downloaded!';
+        if (isLocalServer) {
+            // Use auto-publish API
+            const response = await fetch('http://localhost:3000/api/publish', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    filename: filename,
+                    content: html
+                })
+            });
 
-        // Show next steps
-        setTimeout(() => {
-            const instructions =
-                `✅ File downloaded: ${filename}\n\n` +
-                `📋 Next steps:\n` +
-                `1. Move ${filename} from Downloads to project folder\n` +
-                `   (Replace the existing file)\n\n` +
-                `2. Open Terminal and run:\n` +
-                `   cd ~/Desktop/blockbox-landing\n` +
-                `   ./publish.sh\n\n` +
-                `3. Changes will be live on GitHub Pages in ~1 minute!\n\n` +
-                `Clear your changes now?`;
+            const result = await response.json();
 
-            if (confirm(instructions)) {
-                localStorage.removeItem(CHANGES_KEY);
-                location.reload();
+            if (result.success) {
+                publishBtn.innerHTML = '✅ Published!';
+                console.log('✅ Auto-published:', result);
+
+                setTimeout(() => {
+                    alert('🚀 Changes published to GitHub!\n\n✓ File saved\n✓ Committed to git\n✓ Pushed to GitHub\n\nChanges will be live in ~1 minute!\n\nReloading page...');
+                    localStorage.removeItem(CHANGES_KEY);
+                    location.reload();
+                }, 500);
             } else {
-                publishBtn.innerHTML = originalText;
-                publishBtn.disabled = false;
+                throw new Error(result.error || 'Publish failed');
             }
-        }, 500);
+        } else {
+            // Fallback: manual download (for non-local viewing)
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            publishBtn.innerHTML = '✅ Downloaded!';
+
+            setTimeout(() => {
+                const instructions =
+                    `✅ File downloaded: ${filename}\n\n` +
+                    `⚠️ Auto-publish only works on localhost\n\n` +
+                    `📋 To enable auto-publish:\n` +
+                    `1. Run: node server.js\n` +
+                    `2. Open: http://localhost:3000\n` +
+                    `3. Make edits and publish - it's automatic!\n\n` +
+                    `Or manually:\n` +
+                    `1. Move ${filename} to project folder\n` +
+                    `2. Run: ./publish.sh\n\n` +
+                    `Clear your changes now?`;
+
+                if (confirm(instructions)) {
+                    localStorage.removeItem(CHANGES_KEY);
+                    location.reload();
+                } else {
+                    publishBtn.innerHTML = originalText;
+                    publishBtn.disabled = false;
+                }
+            }, 500);
+        }
 
     } catch (error) {
         console.error('Publish error:', error);
         publishBtn.innerHTML = '❌ Failed';
-        alert('Failed to download file: ' + error.message);
+        alert('Failed to publish: ' + error.message + '\n\nMake sure the server is running:\nnode server.js');
 
         setTimeout(() => {
             publishBtn.innerHTML = originalText;

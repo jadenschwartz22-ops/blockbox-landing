@@ -16,12 +16,43 @@ A validation landing page for BlockBox, a network device to help people break fr
 
 ## 🚀 Quick Start
 
+### 🎨 Edit Content (One-Click Auto-Publishing)
+
+**New!** You can now edit the website content directly in your browser and publish to GitHub in one click!
+
+1. **Start the server:**
+   ```bash
+   cd ~/Desktop/blockbox-landing
+   node server.js
+   ```
+
+2. **Open in browser:**
+   ```
+   http://localhost:3000
+   ```
+
+3. **Edit mode:**
+   - Press `Ctrl+Shift+E` to enable edit mode
+   - Click any text to edit it inline
+   - Press Enter or click away to save
+
+4. **Publish (One Click!):**
+   - Click `🚀 Publish Changes` button
+   - Confirm
+   - **Done!** Automatically commits and pushes to GitHub
+   - Live in ~1 minute on GitHub Pages
+
 ### File Structure
 ```
 blockbox-landing/
 ├── index.html              # Main landing page
+├── stats.html              # Statistics page
 ├── styles.css              # Responsive styles with dark mode
 ├── script.js               # Analytics & form handling
+├── scroll-animations.js    # Scroll animations
+├── edit-mode.js            # Inline editing system ⭐ NEW
+├── server.js               # Auto-publish server ⭐ NEW
+├── publish.sh              # Manual publish script (backup)
 ├── google-apps-script.js   # Google Sheets integration
 └── README.md              # This file
 ```
