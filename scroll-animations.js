@@ -1,4 +1,4 @@
-// Scroll animations using Intersection Observer (like QuantMage)
+// Scroll animations using Intersection Observer
 document.addEventListener('DOMContentLoaded', () => {
     // Select all elements that should animate on scroll
     const animatedElements = document.querySelectorAll(`
@@ -8,21 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
         .use-case-card,
         section h2,
         .section-intro,
-        .emergency-note
+        .emergency-note,
+        .bad-path,
+        .good-path,
+        .blockbox-badge,
+        .stat-card,
+        .scattered-visual,
+        .focused-visual
     `);
 
     // Create intersection observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add animation class when element enters viewport
                 entry.target.classList.add('animate-in');
-                // Optional: unobserve after animation to prevent re-triggering
-                observer.unobserve(entry.target);
+            } else {
+                // Remove animation class when element leaves viewport
+                // This allows re-animation on scroll back up
+                entry.target.classList.remove('animate-in');
             }
         });
     }, {
-        threshold: 0.1, // Trigger when 10% of element is visible
-        rootMargin: '0px 0px -50px 0px' // Start animation slightly before element enters viewport
+        threshold: 0.15, // Trigger when 15% of element is visible
+        rootMargin: '0px 0px -80px 0px' // Start animation before element fully enters viewport
     });
 
     // Observe all elements

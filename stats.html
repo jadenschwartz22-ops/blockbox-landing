@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why This Matters - BlockBox Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .stats-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card-large {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 255, 255, 0.2);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card-large:hover {
+            border-color: rgba(0, 255, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--neon-red);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .stat-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .category-section {
+            margin: 6rem 0;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 3rem 0;
+            font-size: 1.1rem;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--neon-purple);
+            transform: translateX(-5px);
+        }
+
+        .impact-visual {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 0, 85, 0.05);
+            border: 2px solid rgba(255, 0, 85, 0.3);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--neon-red);
+            margin-bottom: 1rem;
+        }
+
+        .impact-text {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .source {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="stats-hero">
+        <div class="container">
+            <h1>Why This Matters</h1>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.85); margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                The data on screen time, social media, and digital addiction is devastating. Here's what we're up against.
+            </p>
+        </div>
+    </section>
+
+    <!-- Screen Time Section -->
+    <section class="problem-section">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to home</a>
+
+            <div class="category-section">
+                <h2 class="category-title">Screen Time</h2>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average daily screen time for adults (excluding work)</div>
+                        <div class="source">Source: DataReportal 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average daily screen time for teens</div>
+                        <div class="source">Source: Common Sense Media 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">76</div>
+                        <div class="stat-label">Days per year</div>
+                        <div class="stat-description">Time the average person spends on their phone annually</div>
+                        <div class="source">Source: Reviews.org 2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-number">2,555</div>
+                <div class="impact-text">Hours lost to screens every year</div>
+                <p style="margin-top: 1.5rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    That's enough time to learn 3 languages, write a book, or get in the best shape of your life.
+                </p>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="category-section">
+                <h2 class="category-title">Social Media Addiction</h2>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">2.5</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average time spent on social media</div>
+                        <div class="source">Source: DataReportal 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">210</div>
+                        <div class="stat-label">Times per day</div>
+                        <div class="stat-description">Average person checks their phone</div>
+                        <div class="source">Source: Reviews.org 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">59%</div>
+                        <div class="stat-label">Of adults</div>
+                        <div class="stat-description">Say they're addicted to social media</div>
+                        <div class="source">Source: Pew Research 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mental Health Section -->
+            <div class="category-section">
+                <h2 class="category-title">Mental Health Impact</h2>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">3x</div>
+                        <div class="stat-label">Higher risk</div>
+                        <div class="stat-description">Depression rates in heavy social media users vs. light users</div>
+                        <div class="source">Source: JAMA Psychiatry 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Of teens</div>
+                        <div class="stat-description">Report anxiety when separated from their phone</div>
+                        <div class="source">Source: Common Sense Media 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">62%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Feel social media has negative impact on mental health</div>
+                        <div class="source">Source: Pew Research 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adult Content Section -->
+            <div class="category-section">
+                <h2 class="category-title">Adult Content</h2>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">64%</div>
+                        <div class="stat-label">Of men</div>
+                        <div class="stat-description">View adult content at least once per week</div>
+                        <div class="source">Source: Covenant Eyes 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Years old</div>
+                        <div class="stat-description">Average age of first exposure to adult content</div>
+                        <div class="source">Source: Fight the New Drug 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">83%</div>
+                        <div class="stat-label">Of men</div>
+                        <div class="stat-description">Have tried to quit but relapsed within 6 months</div>
+                        <div class="source">Source: Fortify Program 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gaming Section -->
+            <div class="category-section">
+                <h2 class="category-title">Gaming Addiction</h2>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">8.5</div>
+                        <div class="stat-label">Hours per week</div>
+                        <div class="stat-description">Average gaming time for adults</div>
+                        <div class="source">Source: Entertainment Software Association 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">8.5%</div>
+                        <div class="stat-label">Of gamers</div>
+                        <div class="stat-description">Meet criteria for gaming disorder</div>
+                        <div class="source">Source: WHO 2024</div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">41%</div>
+                        <div class="stat-label">Of gamers</div>
+                        <div class="stat-description">Say gaming negatively impacts sleep, work, or relationships</div>
+                        <div class="source">Source: American Psychiatric Association 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 2rem; margin-bottom: 2rem;">The average person will spend</div>
+                <div class="impact-number">44 years</div>
+                <div class="impact-text">looking at screens in their lifetime</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.2rem;">
+                    That's more time than sleeping. More than working. More than being with family.
+                </p>
+                <div class="source">Source: Vision Direct 2024</div>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; margin: 6rem 0;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Take Back Your Time?</h2>
+                <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                    BlockBox helps you break free from the statistics.
+                </p>
+                <a href="index.html#hero-form" class="cta-button" style="display: inline-block; padding: 1rem 3rem; background: var(--neon-purple); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease;">
+                    Get Early Access
+                </a>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+        </div>
+    </section>
+</body>
+</html>
