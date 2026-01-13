@@ -134,7 +134,7 @@ body::after {
 }
 
 /* ================================
-   HERO VISUAL - NETWORK FLOW
+   HERO VISUAL - LOGICAL FLOW
    ================================ */
 
 .hero-visual {
@@ -142,105 +142,105 @@ body::after {
     position: relative;
 }
 
-.network-flow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.network-flow-diagram {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     gap: 40px;
-    position: relative;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.data-stream {
+.flow-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* LEFT SIDE - INCOMING TRAFFIC */
+.traffic-streams {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.stream-line {
+    display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     position: relative;
 }
 
-.packet {
-    width: 60px;
-    height: 8px;
-    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-    border-radius: 4px;
-    opacity: 0;
-    animation: packetFlow 2s ease-in-out infinite;
+.stream-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: dotFlow 2s ease-in-out infinite;
+}
+
+.blocked-stream .stream-dot {
+    background: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+.good-stream .stream-dot {
+    background: var(--neon-cyan);
     box-shadow: 0 0 10px var(--neon-cyan);
 }
 
-.data-stream.blocked .packet {
-    background: linear-gradient(90deg, transparent, var(--neon-red), transparent);
-    box-shadow: 0 0 10px var(--neon-red);
-    animation: packetFlowBlocked 2s ease-in-out infinite;
-}
+.stream-dot:nth-child(1) { animation-delay: 0s; }
+.stream-dot:nth-child(2) { animation-delay: 0.5s; }
+.stream-dot:nth-child(3) { animation-delay: 1s; }
 
-.packet:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.packet:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.packet:nth-child(3) {
-    animation-delay: 1.2s;
-}
-
-@keyframes packetFlow {
+@keyframes dotFlow {
     0% {
-        opacity: 0;
-        transform: translateX(-20px);
+        opacity: 0.3;
+        transform: translateX(0);
     }
     50% {
         opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
         transform: translateX(20px);
     }
-}
-
-@keyframes packetFlowBlocked {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    40% {
-        opacity: 1;
+    100% {
+        opacity: 0.3;
         transform: translateX(0);
     }
-    50% {
-        opacity: 0.5;
-        transform: translateX(0) scaleX(0.5);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(0) scaleX(0);
-    }
 }
 
-.stream-label {
-    font-size: 0.875rem;
+.traffic-label {
+    font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 8px;
+    letter-spacing: 0.5px;
+    position: absolute;
+    left: 60px;
+    white-space: nowrap;
 }
 
-.stream-label.danger {
+.traffic-label.bad {
     color: var(--neon-red);
     text-shadow: 0 0 10px var(--neon-red);
 }
 
-.stream-label.success {
+.traffic-label.good {
     color: var(--neon-cyan);
     text-shadow: 0 0 10px var(--neon-cyan);
 }
 
+/* CENTER - BLOCKBOX */
+.flow-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
 .blockbox-device {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
     border: 2px solid var(--neon-purple);
     border-radius: 16px;
@@ -329,8 +329,103 @@ body::after {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px var(--neon-purple);
-    position: absolute;
-    bottom: -30px;
+}
+
+.filter-action {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* RIGHT SIDE - OUTPUT */
+.output-streams {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.blocked-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.x-mark {
+    font-size: 1.5rem;
+    color: var(--neon-red);
+    font-weight: 700;
+    animation: xPulse 2s ease-in-out infinite;
+}
+
+@keyframes xPulse {
+    0%, 100% {
+        opacity: 0.6;
+        text-shadow: 0 0 10px var(--neon-red);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 20px var(--neon-red);
+    }
+}
+
+.blocked-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--neon-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+.allowed-stream {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stream-dot.allowed {
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    animation: dotFlowOut 2s ease-in-out infinite;
+}
+
+@keyframes dotFlowOut {
+    0% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+}
+
+.allowed-text {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    letter-spacing: 0.5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .network-flow-diagram {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .traffic-label {
+        position: static;
+        margin-top: 8px;
+        display: block;
+    }
 }
 
 .email-form {
