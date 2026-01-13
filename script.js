@@ -1,48 +1,14 @@
-// Track checkbox selections
-document.querySelectorAll('input[name="struggle"]').forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
-        const struggle = e.target.value;
-        const isChecked = e.target.checked;
+// Track use case selection (radio buttons)
+document.querySelectorAll('input[name="use-case"]').forEach(radio => {
+    radio.addEventListener('change', (e) => {
+        const useCase = e.target.value;
 
         // Track in Google Analytics
-        gtag('event', 'struggle_selected', {
-            struggle_type: struggle,
-            action: isChecked ? 'checked' : 'unchecked'
+        gtag('event', 'use_case_selected', {
+            use_case: useCase
         });
 
-        console.log(`Struggle tracked: ${struggle} - ${isChecked ? 'checked' : 'unchecked'}`);
-    });
-});
-
-// Track who selections
-document.querySelectorAll('input[name="who"]').forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
-        const who = e.target.value;
-        const isChecked = e.target.checked;
-
-        // Track in Google Analytics
-        gtag('event', 'who_selected', {
-            who_type: who,
-            action: isChecked ? 'checked' : 'unchecked'
-        });
-
-        console.log(`Who tracked: ${who} - ${isChecked ? 'checked' : 'unchecked'}`);
-    });
-});
-
-// Track device selections
-document.querySelectorAll('input[name="device"]').forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
-        const device = e.target.value;
-        const isChecked = e.target.checked;
-
-        // Track in Google Analytics
-        gtag('event', 'device_selected', {
-            device_type: device,
-            action: isChecked ? 'checked' : 'unchecked'
-        });
-
-        console.log(`Device tracked: ${device} - ${isChecked ? 'checked' : 'unchecked'}`);
+        console.log(`Use case selected: ${useCase}`);
     });
 });
 
@@ -57,17 +23,9 @@ document.querySelectorAll('.cta-button').forEach(button => {
 
 // Form submission handler
 async function handleFormSubmission(email, formId) {
-    // Collect selected struggles
-    const struggles = Array.from(document.querySelectorAll('input[name="struggle"]:checked'))
-        .map(cb => cb.value);
-
-    // Collect selected "who"
-    const who = Array.from(document.querySelectorAll('input[name="who"]:checked'))
-        .map(cb => cb.value);
-
-    // Collect selected devices
-    const devices = Array.from(document.querySelectorAll('input[name="device"]:checked'))
-        .map(cb => cb.value);
+    // Collect selected use case (radio button - only one)
+    const useCase = document.querySelector('input[name="use-case"]:checked');
+    const useCaseValue = useCase ? useCase.value : 'none';
 
     // Get UTM parameters from URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -78,9 +36,7 @@ async function handleFormSubmission(email, formId) {
     // Prepare submission data
     const submissionData = {
         email: email,
-        struggles: struggles.join(', '),
-        who: who.join(', '),
-        devices: devices.join(', '),
+        use_case: useCaseValue,
         utm_source: utmSource,
         utm_medium: utmMedium,
         utm_campaign: utmCampaign,
@@ -95,9 +51,7 @@ async function handleFormSubmission(email, formId) {
     // Track in Google Analytics
     gtag('event', 'waitlist_signup', {
         email: email,
-        struggles_count: struggles.length,
-        who_count: who.length,
-        devices_count: devices.length,
+        use_case: useCaseValue,
         utm_source: utmSource
     });
 

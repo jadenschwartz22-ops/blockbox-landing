@@ -30,9 +30,7 @@ function doPost(e) {
       sheet.appendRow([
         'Timestamp',
         'Email',
-        'Struggles',
-        'Who Is This For',
-        'Devices',
+        'Use Case',
         'UTM Source',
         'UTM Medium',
         'UTM Campaign',
@@ -42,7 +40,7 @@ function doPost(e) {
       ]);
 
       // Format header row
-      const headerRange = sheet.getRange(1, 1, 1, 11);
+      const headerRange = sheet.getRange(1, 1, 1, 9);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#4285f4');
       headerRange.setFontColor('#ffffff');
@@ -52,9 +50,7 @@ function doPost(e) {
     sheet.appendRow([
       data.timestamp,
       data.email,
-      data.struggles,
-      data.who,
-      data.devices,
+      data.use_case,
       data.utm_source,
       data.utm_medium,
       data.utm_campaign,
@@ -64,7 +60,7 @@ function doPost(e) {
     ]);
 
     // Auto-resize columns for readability
-    sheet.autoResizeColumns(1, 11);
+    sheet.autoResizeColumns(1, 9);
 
     // Send email notification (optional - uncomment if you want email alerts)
     // sendEmailNotification(data);
@@ -91,12 +87,10 @@ function sendEmailNotification(data) {
   const subject = '🎉 New BlockBox Waitlist Signup!';
 
   const body = `
-New signup details:
+New BlockBox waitlist signup!
 
 Email: ${data.email}
-Struggles: ${data.struggles || 'None selected'}
-Who: ${data.who || 'None selected'}
-Devices: ${data.devices || 'None selected'}
+Use Case: ${data.use_case || 'Not selected'}
 Source: ${data.utm_source}
 Medium: ${data.utm_medium}
 Campaign: ${data.utm_campaign}
@@ -114,9 +108,7 @@ function test() {
     postData: {
       contents: JSON.stringify({
         email: 'test@example.com',
-        struggles: 'social, gaming',
-        who: 'myself',
-        devices: 'phone, laptop',
+        use_case: 'social-media',
         utm_source: 'test',
         utm_medium: 'test',
         utm_campaign: 'test',
