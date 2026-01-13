@@ -93,6 +93,112 @@ body::after {
     }
 }
 
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Navigation Bar */
+.main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-cyan);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--neon-cyan);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.cta-nav {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--neon-cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.nav-link.cta-nav::after {
+    display: none;
+}
+
+.nav-link.cta-nav:hover {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
