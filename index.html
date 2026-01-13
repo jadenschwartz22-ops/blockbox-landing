@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>BlockBox - Stop Porn Addiction, Social Media & Gaming Addiction | Digital Detox Device</title>
+    <meta name="title" content="BlockBox - Stop Porn Addiction, Social Media & Gaming Addiction | Digital Detox Device">
+    <meta name="description" content="Network-level device to break free from porn addiction, social media addiction, gaming addiction, doomscrolling & phone addiction. Commitment locks + accountability. No subscription.">
+    <meta name="keywords" content="porn addiction, porn blocker, social media addiction, gaming addiction, phone addiction, digital detox, dopamine detox, doomscrolling, screen time, internet addiction, technology addiction, content blocker, accountability partner, quit porn, stop gaming, reduce screen time, TV addiction, YouTube addiction, impulse control, ADHD focus">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jadenschwartz.github.io/blockbox-landing/">
+    <meta property="og:title" content="BlockBox - Break Free from Digital Addiction">
+    <meta property="og:description" content="Take back control from porn, social media, gaming & screen addiction. Network device with commitment locks & accountability.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jadenschwartz.github.io/blockbox-landing/">
+    <meta property="twitter:title" content="BlockBox - Break Free from Digital Addiction">
+    <meta property="twitter:description" content="Take back control from porn, social media, gaming & screen addiction. Network device with commitment locks & accountability.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jadenschwartz.github.io/blockbox-landing/">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'send_page_view': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (scrollPercent >= 25 && scrollPercent < 30) {
+                    gtag('event', 'scroll_depth', { depth: '25%' });
+                } else if (scrollPercent >= 50 && scrollPercent < 55) {
+                    gtag('event', 'scroll_depth', { depth: '50%' });
+                } else if (scrollPercent >= 75 && scrollPercent < 80) {
+                    gtag('event', 'scroll_depth', { depth: '75%' });
+                } else if (scrollPercent >= 90) {
+                    gtag('event', 'scroll_depth', { depth: '100%' });
+                }
+            }
+        });
+
+        // Track time on page
+        let timeOnPage = 0;
+        setInterval(() => {
+            timeOnPage += 10;
+            if (timeOnPage === 30) gtag('event', 'time_on_page', { duration: '30s' });
+            if (timeOnPage === 60) gtag('event', 'time_on_page', { duration: '60s' });
+            if (timeOnPage === 120) gtag('event', 'time_on_page', { duration: '2min' });
+        }, 10000);
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>You're stronger than the pull of your screen</h1>
+                <p class="subheadline">BlockBox helps you break free from digital addiction with network-level blocking, commitment locks, and accountability—all in one device.</p>
+
+                <form id="hero-form" class="email-form">
+                    <input type="email" id="hero-email" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-button">Join the Waitlist</button>
+                </form>
+                <p class="form-subtext">Be the first to know when BlockBox launches. No spam, ever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Your Struggle Section -->
+    <section class="struggles">
+        <div class="container">
+            <h2>What are you struggling with?</h2>
+            <p class="section-intro">Select all that apply. Your feedback helps us build BlockBox better.</p>
+
+            <div class="checkbox-grid">
+                <label class="checkbox-card" data-struggle="porn">
+                    <input type="checkbox" name="struggle" value="porn">
+                    <span class="checkbox-icon">🔒</span>
+                    <span class="checkbox-label">Porn/Adult Content</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="social">
+                    <input type="checkbox" name="struggle" value="social">
+                    <span class="checkbox-icon">📱</span>
+                    <span class="checkbox-label">Social Media</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="gaming">
+                    <input type="checkbox" name="struggle" value="gaming">
+                    <span class="checkbox-icon">🎮</span>
+                    <span class="checkbox-label">Gaming</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="streaming">
+                    <input type="checkbox" name="struggle" value="streaming">
+                    <span class="checkbox-icon">📺</span>
+                    <span class="checkbox-label">YouTube/Streaming Binges</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="latenight">
+                    <input type="checkbox" name="struggle" value="latenight">
+                    <span class="checkbox-icon">🌙</span>
+                    <span class="checkbox-label">Late-Night Browsing</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="shopping">
+                    <input type="checkbox" name="struggle" value="shopping">
+                    <span class="checkbox-icon">🛒</span>
+                    <span class="checkbox-label">Online Shopping/Gambling</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="news">
+                    <input type="checkbox" name="struggle" value="news">
+                    <span class="checkbox-icon">📰</span>
+                    <span class="checkbox-label">News/Doomscrolling</span>
+                </label>
+
+                <label class="checkbox-card" data-struggle="productivity">
+                    <input type="checkbox" name="struggle" value="productivity">
+                    <span class="checkbox-icon">⏰</span>
+                    <span class="checkbox-label">Focus/Productivity</span>
+                </label>
+            </div>
+
+            <!-- Who is this for -->
+            <div class="who-section">
+                <h3>Who is this for?</h3>
+                <div class="who-checkboxes">
+                    <label class="who-checkbox">
+                        <input type="checkbox" name="who" value="myself">
+                        <span>🧑 Myself</span>
+                    </label>
+                    <label class="who-checkbox">
+                        <input type="checkbox" name="who" value="kids">
+                        <span>👨‍👩‍👧‍👦 My Kids</span>
+                    </label>
+                    <label class="who-checkbox">
+                        <input type="checkbox" name="who" value="family">
+                        <span>🏠 My Household/Family</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How BlockBox Works</h2>
+            <p class="section-intro">Simple setup. Powerful protection.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🔌</div>
+                    <h3>Plug In</h3>
+                    <p>Connect BlockBox to your home network in minutes. It works instantly across all your devices.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">⚙️</div>
+                    <h3>Set Your Rules</h3>
+                    <p>Choose what to block and when. Set your commitment period from 1 week to 1 year.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🤝</div>
+                    <h3>Add Accountability</h3>
+                    <p>Invite someone you trust. They'll get notified if you try to bypass your own rules.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🔐</div>
+                    <h3>Lock It In</h3>
+                    <p>Activate your commitment lock. No backdoors, no easy outs. Future you will thank present you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why BlockBox Works</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Network-Level Blocking</h3>
+                    <p>Works on every device connected to your network. Phone, laptop, gaming console, smart TV—everything.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Commitment Lock</h3>
+                    <p>Set rules when you're thinking clearly, then lock them for weeks or months. Can't disable during a moment of weakness.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Accountability Partner</h3>
+                    <p>Emergency unlock requires 48-hour wait + approval from someone you trust. Real consequences, real support.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Own It Forever</h3>
+                    <p>One-time purchase, no subscriptions. Your device, your rules, your privacy. We never see your browsing data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist CTA Section -->
+    <section class="waitlist-cta">
+        <div class="container">
+            <h2>Ready to take back control?</h2>
+            <p class="section-intro">Join the waitlist and be first to get BlockBox when it launches.</p>
+
+            <form id="main-form" class="email-form">
+                <input type="email" id="main-email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button">Join the Waitlist</button>
+            </form>
+
+            <div class="devices-section">
+                <p class="devices-question">Which devices do you want to protect? (Optional)</p>
+                <div class="device-checkboxes">
+                    <label class="device-checkbox">
+                        <input type="checkbox" name="device" value="phone">
+                        <span>📱 Phone</span>
+                    </label>
+                    <label class="device-checkbox">
+                        <input type="checkbox" name="device" value="laptop">
+                        <span>💻 Laptop</span>
+                    </label>
+                    <label class="device-checkbox">
+                        <input type="checkbox" name="device" value="gaming">
+                        <span>🎮 Gaming Console</span>
+                    </label>
+                    <label class="device-checkbox">
+                        <input type="checkbox" name="device" value="tv">
+                        <span>📺 Smart TV</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BlockBox. Built with intention.</p>
+            <p class="footer-tagline">You deserve freedom from digital addiction.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🎉 You're on the list!</h2>
+            <p>We'll email you as soon as BlockBox is ready. Thank you for taking the first step.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
