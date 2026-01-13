@@ -1177,3 +1177,147 @@ footer p {
         font-size: 1rem;
     }
 }
+
+/* Updated Network Diagram - No Emojis */
+.node-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.filters-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.2);
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.device-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+.protected-check {
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #10b981;
+    letter-spacing: 0.5px;
+}
+
+.check {
+    color: #10b981;
+    font-weight: 700;
+    margin-right: 8px;
+}
+/* CSS-Generated Network Icons */
+.network-node.internet .node-label::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 70%);
+    border: 3px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    position: relative;
+}
+
+.network-node.router .node-label::before {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 50px;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+    border: 3px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    position: relative;
+}
+
+.network-node.router .node-label::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 15px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+}
+
+.device-mini .device-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 50px;
+    margin: 0 auto 8px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 6px;
+}
+
+.device-mini:nth-child(2) .device-label::before {
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.device-mini:nth-child(3) .device-label::before {
+    width: 55px;
+    height: 35px;
+}
+
+.device-mini:nth-child(4) .device-label::before {
+    width: 50px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+/* Control Device Labels */
+.control-device {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.1);
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.control-card .control-icon {
+    display: none;
+}
+
+.rule.blocked::before {
+    content: '✗';
+    color: #ef4444;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.rule.allowed::before {
+    content: '✓';
+    color: #10b981;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.rule.blocked {
+    border-left-color: #ef4444;
+}
+
+.rule.allowed {
+    border-left-color: #10b981;
+}
