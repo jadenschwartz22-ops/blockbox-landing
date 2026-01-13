@@ -1262,11 +1262,11 @@ footer p {
 }
 
 .hero-right {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px 30px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-right .network-diagram {
@@ -1401,17 +1401,17 @@ footer p {
 }
 
 .filters-badge {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #10b981;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.15));
-    padding: 6px 16px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    padding: 8px 20px;
     border-radius: 20px;
     margin-top: 10px;
     display: inline-block;
-    border: 2px solid rgba(16, 185, 129, 0.5);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Filter Options Display */
@@ -1799,11 +1799,12 @@ footer p {
 }
 
 .flow-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
     text-align: center;
     letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .protected-mini-devices {
