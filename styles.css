@@ -106,53 +106,26 @@ body {
 .device-body {
     width: 200px;
     height: 200px;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     border-radius: 24px;
     margin: 0 auto 20px;
     box-shadow:
         0 25px 70px rgba(0, 0, 0, 0.5),
-        0 0 0 3px rgba(16, 185, 129, 0.3),
+        0 0 0 3px rgba(16, 185, 129, 0.2),
         inset 0 2px 20px rgba(255, 255, 255, 0.05);
     position: relative;
     border: 3px solid #334155;
-    animation: deviceFloat 4s ease-in-out infinite;
-}
-
-@keyframes deviceFloat {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-8px) scale(1.02); }
 }
 
 .device-light {
-    width: 16px;
-    height: 16px;
-    background: radial-gradient(circle, #10b981 0%, #059669 100%);
+    width: 14px;
+    height: 14px;
+    background: #10b981;
     border-radius: 50%;
     position: absolute;
     top: 24px;
     right: 24px;
-    box-shadow:
-        0 0 25px rgba(16, 185, 129, 0.8),
-        0 0 40px rgba(16, 185, 129, 0.5),
-        inset 0 -2px 8px rgba(0, 0, 0, 0.3);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-        box-shadow:
-            0 0 25px rgba(16, 185, 129, 0.8),
-            0 0 40px rgba(16, 185, 129, 0.5),
-            inset 0 -2px 8px rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        opacity: 0.7;
-        box-shadow:
-            0 0 35px rgba(16, 185, 129, 1),
-            0 0 60px rgba(16, 185, 129, 0.7),
-            inset 0 -2px 8px rgba(0, 0, 0, 0.3);
-    }
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
 }
 
 .device-port {
@@ -626,6 +599,57 @@ footer p {
     color: var(--text-primary);
 }
 
+/* Pricing Survey Modal */
+.modal-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.pricing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.pricing-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pricing-option:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+}
+
+.pricing-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.pricing-option input[type="radio"]:checked + .pricing-label {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.pricing-label {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hero h1 {
@@ -952,39 +976,25 @@ footer p {
 .wifi-wave {
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     border-right-color: transparent;
     border-bottom-color: transparent;
     transform: rotate(-45deg);
-    animation: wifiPulse 2s ease-in-out infinite;
 }
 
 .wifi-wave:nth-child(2) {
     width: 28px;
     height: 28px;
     border-width: 3px;
-    opacity: 0.7;
-    animation-delay: 0.2s;
+    opacity: 0.6;
 }
 
 .wifi-wave:nth-child(3) {
     width: 36px;
     height: 36px;
     border-width: 3px;
-    opacity: 0.5;
-    animation-delay: 0.4s;
-}
-
-@keyframes wifiPulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: rotate(-45deg) scale(0.9);
-    }
-    50% {
-        opacity: 1;
-        transform: rotate(-45deg) scale(1.1);
-    }
+    opacity: 0.4;
 }
 
 /* Network Lines with Funnel Effect */
@@ -1013,48 +1023,9 @@ footer p {
     clip-path: polygon(30% 0, 70% 0, 45% 100%, 55% 100%);
 }
 
-.network-line::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: dataPulse 1.5s ease-in-out infinite;
-}
-
-@keyframes dataPulse {
-    0%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -100%);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
 .network-line.highlight {
     background: linear-gradient(180deg, #10b981 0%, #059669 100%);
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
-    animation: lineGlow 2s ease-in-out infinite;
-}
-
-@keyframes lineGlow {
-    0%, 100% {
-        box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 30px rgba(16, 185, 129, 0.9);
-    }
-}
-
-.network-line.highlight::after {
-    background: #10b981;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
 }
 
 .network-split {
@@ -1077,7 +1048,6 @@ footer p {
     height: 35px;
     background: linear-gradient(180deg, #10b981 0%, transparent 100%);
     border-radius: 2px;
-    animation: lineGlow 2s ease-in-out infinite;
 }
 
 .protected-devices {
@@ -1222,26 +1192,16 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
-/* Hero Section - DOPAMINERGIC DESIGN */
+/* Hero Section - ELEGANT & CLASSY */
 .hero {
     min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
-    animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    }
-    50% {
-        background: linear-gradient(135deg, #764ba2 0%, #f093fb 50%, #667eea 100%);
-    }
 }
 
 .hero::before {
@@ -1252,16 +1212,9 @@ footer p {
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 60% 20%, rgba(240, 147, 251, 0.2) 0%, transparent 40%);
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
-    animation: float 8s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
 }
 
 .hero-split {
@@ -1283,23 +1236,9 @@ footer p {
     font-size: 4rem;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #ffffff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 4px 30px rgba(255, 255, 255, 0.5);
-    filter: drop-shadow(0 4px 30px rgba(255, 255, 255, 0.3));
-    animation: textGlow 3s ease-in-out infinite;
-}
-
-@keyframes textGlow {
-    0%, 100% {
-        filter: drop-shadow(0 4px 30px rgba(255, 255, 255, 0.3));
-    }
-    50% {
-        filter: drop-shadow(0 4px 40px rgba(255, 255, 255, 0.6));
-    }
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .tagline {
@@ -1527,27 +1466,16 @@ footer p {
     font-weight: 700;
     margin-right: 8px;
 }
-/* CSS-Generated Network Icons - Hero Section (Small) - CREATIVE DESIGNS */
+/* CSS-Generated Network Icons - Hero Section (Small) - ELEGANT */
 .css-internet-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 10px;
-    background: conic-gradient(from 0deg,
-        rgba(255,255,255,0.3) 0deg,
-        rgba(255,255,255,0.1) 90deg,
-        rgba(255,255,255,0.3) 180deg,
-        rgba(255,255,255,0.1) 270deg,
-        rgba(255,255,255,0.3) 360deg);
-    border: 3px solid rgba(255,255,255,0.6);
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 70%);
+    border: 3px solid rgba(255,255,255,0.5);
     border-radius: 50%;
     position: relative;
-    box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 20px rgba(255,255,255,0.1);
-    animation: rotate 8s linear infinite;
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    box-shadow: 0 0 15px rgba(255,255,255,0.15);
 }
 
 .css-internet-icon::before {

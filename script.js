@@ -22,7 +22,7 @@ document.querySelectorAll('.cta-button').forEach(button => {
 });
 
 // Form submission handler
-async function handleFormSubmission(email, formId) {
+async function handleFormSubmission(email, formId, pricingExpectation = 'not_provided') {
     // Collect selected use case (radio button - only one)
     const useCase = document.querySelector('input[name="use-case"]:checked');
     const useCaseValue = useCase ? useCase.value : 'none';
@@ -37,6 +37,7 @@ async function handleFormSubmission(email, formId) {
     const submissionData = {
         email: email,
         use_case: useCaseValue,
+        pricing_expectation: pricingExpectation,
         utm_source: utmSource,
         utm_medium: utmMedium,
         utm_campaign: utmCampaign,
@@ -85,36 +86,58 @@ async function handleFormSubmission(email, formId) {
     }
 }
 
+// Store email temporarily for pricing survey
+let currentEmail = '';
+let currentFormId = '';
+
 // Hero form submission
 document.getElementById('hero-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('hero-email').value;
+    currentEmail = email;
+    currentFormId = 'hero-form';
 
-    const success = await handleFormSubmission(email, 'hero-form');
+    // Show pricing modal instead of success
+    document.getElementById('pricing-modal').style.display = 'block';
 
-    if (success) {
-        // Show success modal
-        document.getElementById('success-modal').style.display = 'block';
-
-        // Reset form
-        e.target.reset();
-    }
+    // Reset form
+    e.target.reset();
 });
 
 // Main form submission
 document.getElementById('main-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('main-email').value;
+    currentEmail = email;
+    currentFormId = 'main-form';
 
-    const success = await handleFormSubmission(email, 'main-form');
+    // Show pricing modal instead of success
+    document.getElementById('pricing-modal').style.display = 'block';
 
-    if (success) {
-        // Show success modal
-        document.getElementById('success-modal').style.display = 'block';
+    // Reset form
+    e.target.reset();
+});
 
-        // Reset form
-        e.target.reset();
+// Pricing survey submission
+document.getElementById('submit-pricing').addEventListener('click', async () => {
+    const selectedPricing = document.querySelector('input[name="pricing"]:checked');
+
+    if (!selectedPricing) {
+        alert('Please select a price range');
+        return;
     }
+
+    // Submit email + pricing expectation together
+    await handleFormSubmission(currentEmail, currentFormId, selectedPricing.value);
+
+    // Hide pricing modal
+    document.getElementById('pricing-modal').style.display = 'none';
+
+    // Show success modal
+    document.getElementById('success-modal').style.display = 'block';
+
+    // Reset pricing selection
+    selectedPricing.checked = false;
 });
 
 // Modal close functionality
