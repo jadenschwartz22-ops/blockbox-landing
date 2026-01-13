@@ -80,48 +80,26 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="network-flow-diagram">
-                        <div class="flow-left">
-                            <p class="flow-label">Internet Traffic</p>
-                            <div class="traffic-streams">
-                                <div class="stream-line blocked-stream">
-                                    <span class="stream-dot"></span>
-                                    <span class="stream-dot"></span>
-                                    <span class="stream-dot"></span>
-                                    <span class="traffic-label bad">Adult Content, Social Media, Gaming</span>
-                                </div>
-                                <div class="stream-line good-stream">
-                                    <span class="stream-dot"></span>
-                                    <span class="stream-dot"></span>
-                                    <span class="stream-dot"></span>
-                                    <span class="traffic-label good">Work, News, Everything Else</span>
-                                </div>
-                            </div>
+                    <div class="simple-blocking-demo">
+                        <div class="threat-items">
+                            <div class="threat-item">Adult Content</div>
+                            <div class="threat-item">Social Media</div>
+                            <div class="threat-item">Gaming Sites</div>
+                            <div class="threat-item">News Sites</div>
                         </div>
 
-                        <div class="flow-center">
-                            <div class="blockbox-device">
-                                <div class="device-glow"></div>
-                                <div class="scan-line"></div>
-                            </div>
-                            <span class="device-label">BlockBox</span>
-                            <p class="filter-action">Filters & Blocks</p>
+                        <div class="shield-barrier">
+                            <div class="shield-icon"></div>
+                            <span class="shield-label">BlockBox</span>
                         </div>
 
-                        <div class="flow-right">
-                            <p class="flow-label">To Your Devices</p>
-                            <div class="output-streams">
-                                <div class="blocked-indicator">
-                                    <span class="x-mark">✕</span>
-                                    <span class="blocked-text">BLOCKED</span>
-                                </div>
-                                <div class="allowed-stream">
-                                    <span class="stream-dot allowed"></span>
-                                    <span class="stream-dot allowed"></span>
-                                    <span class="stream-dot allowed"></span>
-                                    <span class="allowed-text">Allowed Through</span>
-                                </div>
+                        <div class="protected-zone">
+                            <div class="device-icons">
+                                <div class="mini-device">📱</div>
+                                <div class="mini-device">💻</div>
+                                <div class="mini-device">📺</div>
                             </div>
+                            <span class="protected-label">Your Devices: Protected</span>
                         </div>
                     </div>
                 </div>
@@ -360,6 +338,7 @@
         </div>
     </div>
 
+    <script src="scroll-animations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
