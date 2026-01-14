@@ -2,22 +2,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Select all elements that should animate on scroll
     const animatedElements = document.querySelectorAll(`
-        .problem-card,
         .step-card,
-        .category-card,
-        .use-case-card,
+        .feature-card,
+        .privacy-card,
+        .comparison-card,
+        .truth-block,
+        .use-case-item,
+        .problem-insight,
         section h2,
         .section-intro,
         .emergency-note,
-        .bad-path,
-        .good-path,
-        .blockbox-badge,
-        .stat-card,
+        .tech-details,
+        .honest-claim,
+        .diagram-item,
+        .layer-card,
+        .privacy-features,
         .stat-card-large,
-        .flow-step,
-        .blocks-list,
-        .key-feature,
-        .impact-visual
+        .impact-visual,
+        .category-title
     `);
 
     // Create intersection observer
