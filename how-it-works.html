@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>How BlockBox Works - Technical Details & Setup Guide</title>
+    <meta name="description" content="Learn how BlockBox creates physical friction to block gaming, porn, social media and streaming. Network-level filtering that works on all devices. 10-minute setup.">
+    <meta name="keywords" content="how blockbox works, network filter setup, hardware blocker guide, router content filter, physical internet blocker">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How BlockBox Works - Network-Level Content Filtering">
+    <meta property="og:description" content="Physical device that plugs into your router. Set your rules, lock them in. 10-minute setup.">
+
+    <link rel="canonical" href="https://jadenschwartz.github.io/blockbox-landing/how-it-works.html">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .how-hero {
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .how-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .how-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-purple);
+            transform: translateX(-5px);
+        }
+
+        .setup-steps {
+            margin: 4rem 0;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-details {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .tech-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .tech-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tech-details li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .tech-details li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-detail-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-detail-card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .feature-detail-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+
+        .feature-detail-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .diagram-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .diagram-item {
+            display: inline-block;
+            margin: 1rem;
+            padding: 1.5rem 2rem;
+            background: var(--bg-card);
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .diagram-arrow {
+            display: inline-block;
+            margin: 0 1rem;
+            color: var(--accent-blue);
+            font-size: 2rem;
+        }
+
+        .privacy-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .privacy-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .privacy-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .commitment-lock {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 2px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .commitment-lock h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .commitment-lock p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .limitation-note {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .diagram-item {
+                display: block;
+                margin: 1rem auto;
+            }
+
+            .diagram-arrow {
+                display: block;
+                transform: rotate(90deg);
+                margin: 0.5rem auto;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="how-hero">
+        <div class="container">
+            <h1>How BlockBox Works</h1>
+            <p>Physical friction at the network level. Set your rules, lock them in. Here's the complete technical breakdown.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="problem-section">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to home</a>
+
+            <h2>10-Minute Setup</h2>
+            <p class="section-intro">Plug it in. Configure your rules. Lock it down. That's it.</p>
+
+            <div class="setup-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Plug Into Your Router</h3>
+                    <p>BlockBox sits between your modem and router (or router and devices). One Ethernet cable in, one Ethernet cable out.</p>
+                    <p>Works with any standard home network. No technical knowledge required.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Configure Your Rules</h3>
+                    <p>Open the BlockBox app on your phone or computer. Choose what to block:</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;">Gaming platforms (Steam, Epic, Xbox Live, PlayStation Network)</li>
+                        <li style="margin-bottom: 0.5rem;">Adult content (comprehensive filtering or custom block lists)</li>
+                        <li style="margin-bottom: 0.5rem;">Social media (TikTok, Instagram, Twitter, Facebook, YouTube)</li>
+                        <li style="margin-bottom: 0.5rem;">Streaming services (Netflix, Hulu, Disney+)</li>
+                        <li style="margin-bottom: 0.5rem;">Custom domains or categories</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Set time limits, schedule access windows, or block completely.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Set Your Commitment Lock</h3>
+                    <p>This is the key feature. Once configured, you choose how hard it is to undo your rules:</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong>24-Hour Delay:</strong> Changes don't take effect for 24 hours</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Accountability Partner:</strong> Someone else must approve changes</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Physical Access:</strong> Requires physically unplugging and resetting device (takes 5-10 minutes)</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">This creates friction at the exact moment you need it most—when you're tempted to disable your own rules.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Done. It Just Works.</h3>
+                    <p>BlockBox runs 24/7 in the background. All devices on your network are protected automatically.</p>
+                    <p>No software to install on each device. No browser extensions to disable. No apps to uninstall.</p>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <h3 style="margin-bottom: 2rem;">Network Flow Diagram</h3>
+                <div class="diagram-item">Internet</div>
+                <span class="diagram-arrow">→</span>
+                <div class="diagram-item">Modem</div>
+                <span class="diagram-arrow">→</span>
+                <div class="diagram-item" style="border-color: var(--accent-blue); background: rgba(59, 130, 246, 0.1);">BlockBox</div>
+                <span class="diagram-arrow">→</span>
+                <div class="diagram-item">Router</div>
+                <span class="diagram-arrow">→</span>
+                <div class="diagram-item">All Your Devices</div>
+            </div>
+
+            <h2 style="margin-top: 5rem;">What BlockBox Blocks</h2>
+
+            <div class="feature-grid">
+                <div class="feature-detail-card">
+                    <h4>Gaming Platforms</h4>
+                    <p><strong>Full blocking:</strong> Steam, Epic Games Store, Origin, Battle.net, GOG, Xbox Live, PlayStation Network, Nintendo Switch Online</p>
+                    <p style="margin-top: 1rem;"><strong>Time limits:</strong> Set daily limits (e.g., 2 hours/day) or schedule windows (e.g., 6-8pm only)</p>
+                    <p style="margin-top: 1rem;"><strong>Custom rules:</strong> Block specific games or game launchers only</p>
+                </div>
+
+                <div class="feature-detail-card">
+                    <h4>Adult Content</h4>
+                    <p><strong>Comprehensive filtering:</strong> Blocks known adult websites using constantly updated databases</p>
+                    <p style="margin-top: 1rem;"><strong>DNS-level blocking:</strong> Works even if someone uses incognito/private browsing</p>
+                    <p style="margin-top: 1rem;"><strong>Optional reporting:</strong> Send weekly summaries to accountability partner (privacy-respecting—no URLs, just attempt counts)</p>
+                </div>
+
+                <div class="feature-detail-card">
+                    <h4>Social Media</h4>
+                    <p><strong>Platform blocking:</strong> TikTok, Instagram, Facebook, Twitter/X, Reddit, Snapchat, YouTube</p>
+                    <p style="margin-top: 1rem;"><strong>Flexible scheduling:</strong> Block during work hours, allow evenings, or block completely</p>
+                    <p style="margin-top: 1rem;"><strong>Granular control:</strong> Block mobile apps and desktop sites separately</p>
+                </div>
+
+                <div class="feature-detail-card">
+                    <h4>Streaming Services</h4>
+                    <p><strong>Video platforms:</strong> Netflix, Hulu, Disney+, Prime Video, HBO Max, Apple TV+</p>
+                    <p style="margin-top: 1rem;"><strong>Time-based rules:</strong> Allow weekends only, limit to 2 hours/day, or block specific services</p>
+                </div>
+
+                <div class="feature-detail-card">
+                    <h4>Custom Categories</h4>
+                    <p><strong>News sites:</strong> Block doomscrolling and news addiction</p>
+                    <p style="margin-top: 1rem;"><strong>Shopping:</strong> Block Amazon, eBay, impulse spending sites</p>
+                    <p style="margin-top: 1rem;"><strong>Custom domains:</strong> Add any website to your block list</p>
+                </div>
+
+                <div class="feature-detail-card">
+                    <h4>Multiple Profiles</h4>
+                    <p><strong>Family accounts:</strong> Different rules for each family member</p>
+                    <p style="margin-top: 1rem;"><strong>Device-specific:</strong> Kids' tablets get stricter rules than adult laptops</p>
+                    <p style="margin-top: 1rem;"><strong>Age-appropriate:</strong> Automatic filtering based on user age</p>
+                </div>
+            </div>
+
+            <div class="commitment-lock">
+                <h3>The Commitment Lock—Why BlockBox Works</h3>
+                <p>Software blockers fail because they're too easy to disable. 10 seconds to uninstall. 5 clicks to bypass.</p>
+                <p style="margin-top: 1rem;"><strong>BlockBox creates physical friction.</strong></p>
+                <p style="margin-top: 1rem;">Changing your rules requires waiting 24 hours, getting approval from someone else, or physically unplugging and resetting the device. That 5-minute barrier is enough to break the impulse.</p>
+                <p style="margin-top: 1rem;">Most relapses aren't planned—they're impulsive. BlockBox targets that exact moment of weakness.</p>
+            </div>
+
+            <h2 style="margin-top: 5rem;">Technical Details</h2>
+
+            <div class="tech-details">
+                <h3>How It Works Under the Hood</h3>
+                <ul>
+                    <li><strong>DNS Filtering:</strong> Intercepts domain name requests and blocks unwanted sites before they load</li>
+                    <li><strong>Deep Packet Inspection (DPI):</strong> Analyzes network traffic to identify and block specific apps and services</li>
+                    <li><strong>IP Blocking:</strong> Blocks known IP ranges associated with gaming servers, streaming services, etc.</li>
+                    <li><strong>Category-Based Filtering:</strong> Uses constantly updated databases of millions of websites organized by category</li>
+                    <li><strong>Local Processing:</strong> All filtering happens on-device. No data sent to cloud servers. Your browsing history stays private.</li>
+                    <li><strong>Encrypted Admin Panel:</strong> Configuration interface uses end-to-end encryption</li>
+                </ul>
+            </div>
+
+            <div class="tech-details">
+                <h3>Network Compatibility</h3>
+                <ul>
+                    <li>Works with any router (TP-Link, Netgear, Linksys, Google Wifi, Eero, etc.)</li>
+                    <li>Standard Ethernet connection (RJ45)</li>
+                    <li>Supports networks up to 1 Gbps (does not slow down your internet)</li>
+                    <li>Works with cable, fiber, DSL, and satellite internet</li>
+                    <li>IPv4 and IPv6 support</li>
+                </ul>
+            </div>
+
+            <div class="tech-details">
+                <h3>Device Compatibility</h3>
+                <ul>
+                    <li>Blocks ALL devices connected to your network (no software installation required)</li>
+                    <li>Computers (Windows, Mac, Linux, Chromebook)</li>
+                    <li>Phones and tablets (iPhone, Android)</li>
+                    <li>Gaming consoles (Xbox, PlayStation, Nintendo Switch)</li>
+                    <li>Smart TVs and streaming devices (Roku, Fire TV, Apple TV)</li>
+                    <li>IoT devices and anything else connected to your home network</li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 5rem;">Privacy & Accountability</h2>
+
+            <div class="privacy-card">
+                <h4>Your Privacy is Protected</h4>
+                <p><strong>No tracking:</strong> BlockBox doesn't log specific websites you visit. It only logs blocked attempts (if you enable reporting).</p>
+                <p style="margin-top: 1rem;"><strong>Local processing:</strong> All filtering happens on the device itself. Nothing is sent to the cloud.</p>
+                <p style="margin-top: 1rem;"><strong>No data sales:</strong> We will never sell your data or browsing history. Ever.</p>
+            </div>
+
+            <div class="privacy-card">
+                <h4>Optional Accountability Reporting</h4>
+                <p>If you want extra accountability, you can enable weekly reports sent to a trusted person (sponsor, therapist, family member).</p>
+                <p style="margin-top: 1rem;"><strong>Privacy-respecting reports:</strong> Only shows block attempt counts by category—NOT specific URLs or search terms.</p>
+                <p style="margin-top: 1rem;">Example: "12 adult content block attempts this week" (doesn't say which sites).</p>
+            </div>
+
+            <h2 style="margin-top: 5rem;">Limitations & Workarounds</h2>
+            <p class="section-intro">We're honest about what BlockBox can and cannot do.</p>
+
+            <div class="tech-details">
+                <h3>Known Workarounds</h3>
+                <ul>
+                    <li><strong>Mobile data:</strong> BlockBox only filters your home Wi-Fi. Phones can bypass using cellular data. (Solution: Use phone-level parental controls or accountability apps alongside BlockBox)</li>
+                    <li><strong>VPNs:</strong> Someone could install a VPN to bypass DNS filtering. (Solution: BlockBox can block known VPN providers, and you can enable "VPN detection" alerts)</li>
+                    <li><strong>Alternative DNS:</strong> Tech-savvy users can change device DNS settings to bypass filtering. (Solution: Enable "DNS enforcement mode" to block devices that don't use BlockBox's DNS)</li>
+                    <li><strong>Physical removal:</strong> Someone could unplug BlockBox entirely. (Solution: Use tamper-evident seals or lock the device in a secure location)</li>
+                </ul>
+            </div>
+
+            <div class="limitation-note">
+                <strong>Bottom line:</strong> BlockBox is not unbreakable. A determined, tech-savvy person can work around it. But most relapses aren't planned—they're impulsive. BlockBox creates enough friction to interrupt that impulse. Used alongside personal commitment, therapy, and support groups, it's highly effective.
+            </div>
+
+            <h2 style="margin-top: 5rem;">FAQ</h2>
+
+            <div class="tech-details">
+                <h3>Does BlockBox slow down my internet?</h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">No. BlockBox supports up to 1 Gbps throughput and adds less than 1ms of latency. You won't notice any performance impact.</p>
+            </div>
+
+            <div class="tech-details">
+                <h3>What if I need to access something temporarily?</h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">You can configure "temporary access codes" that work for 1-4 hours. Useful for legitimate needs (e.g., researching a topic that might trigger filters). Codes must be approved by accountability partner or delayed 24 hours.</p>
+            </div>
+
+            <div class="tech-details">
+                <h3>Can kids bypass this?</h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">Not easily. BlockBox uses network-level filtering that can't be disabled by uninstalling an app. The most common bypass is using mobile data instead of home Wi-Fi—in that case, pair BlockBox with phone-level parental controls.</p>
+            </div>
+
+            <div class="tech-details">
+                <h3>What if I move or change internet providers?</h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">BlockBox is portable. Just unplug it and plug it into your new network. Your settings are saved on the device.</p>
+            </div>
+
+            <div class="tech-details">
+                <h3>Is there a subscription fee?</h3>
+                <p style="color: var(--text-secondary); margin-top: 0.5rem;">No monthly fees. You pay once for the device. Filter database updates are free for life.</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; margin: 5rem 0 3rem 0;">
+                <h2>Ready to Take Control?</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Join the waitlist for early access.</p>
+                <a href="index.html#hero-form" class="cta-button">Get Early Access</a>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+        </div>
+    </section>
+
+    <script src="scroll-animations.js"></script>
+</body>
+</html>
