@@ -864,67 +864,13 @@ section h2 {
     background-color: var(--bg-primary);
 }
 
-.truth-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto 3rem;
-}
-
-.truth-block {
-    padding: 2rem;
-    background: var(--bg-card);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-
-.truth-block:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-2px);
-}
-
-.truth-block h3 {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.truth-block ul {
-    list-style: none;
-    padding: 0;
-}
-
-.truth-block li {
-    padding: 1rem 0;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.9375rem;
-}
-
-.truth-block li:last-child {
-    border-bottom: none;
-}
-
-.truth-block strong {
-    color: var(--text-primary);
-}
-
 .honest-claim {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     padding: 2.5rem 2rem;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
     border-radius: 8px;
     border: 1px solid var(--accent-blue);
-}
-
-.honest-claim blockquote {
-    margin: 0;
-    padding: 0;
 }
 
 .honest-claim p {
@@ -941,6 +887,90 @@ section h2 {
 .honest-claim strong {
     color: var(--accent-blue);
     font-weight: 500;
+}
+
+.truth-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.truth-point {
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.truth-point h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.truth-point p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+.problem-note {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.learn-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.learn-more-link {
+    display: inline-block;
+    font-size: 1rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.learn-more-link:hover {
+    color: var(--accent-cyan);
+}
+
+/* ================================
+   STATS CTA SECTION
+   ================================ */
+
+.stats-cta-section {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 80px 2rem;
+}
+
+.stats-cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.stats-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
 }
 
 /* ================================
