@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why This Matters - BlockBox Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .stats-hero {
+            min-height: 25vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card-large {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(0, 255, 255, 0.2);
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card-large:hover {
+            border-color: rgba(0, 255, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--neon-red);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .stat-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .category-section {
+            margin: 3rem 0;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            margin-top: 0;
+            text-align: center;
+            display: block;
+            visibility: visible;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 3rem 0;
+            font-size: 1.1rem;
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--neon-purple);
+            transform: translateX(-5px);
+        }
+
+        .impact-visual {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 0, 85, 0.05);
+            border: 2px solid rgba(255, 0, 85, 0.3);
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            visibility: visible;
+        }
+
+        .section-divider {
+            margin: 4rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .impact-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--neon-red);
+            margin-bottom: 1rem;
+        }
+
+        .impact-text {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        .source {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="stats-hero">
+        <div class="container">
+            <h1>Why This Matters</h1>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.85); margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                The data on screen time, social media, and digital addiction is devastating. Here's what we're up against.
+            </p>
+        </div>
+    </section>
+
+    <!-- Screen Time Section -->
+    <section class="problem-section">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to home</a>
+
+            <div id="screen-time" class="category-section">
+                <h2 class="category-title">Screen Time</h2>
+                <p class="section-intro">How many hours per day are we staring at screens? The numbers are staggering.</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average daily screen time for adults (excluding work)</div>
+                        <div class="source"><a href="https://datareportal.com/reports/digital-2024-global-overview-report" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: DataReportal 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average daily screen time for teens</div>
+                        <div class="source"><a href="https://www.commonsensemedia.org/research" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Common Sense Media 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">1,752</div>
+                        <div class="stat-label">Hours per year</div>
+                        <div class="stat-description">Time spent on screens (4.8 hrs/day × 365 days)</div>
+                        <div class="source"><a href="https://datareportal.com/reports/digital-2024-global-overview-report" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: DataReportal 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">1,752 hours per year staring at screens</div>
+                <div class="impact-number">73 days</div>
+                <div class="impact-text">That's 2.5 months of your life. Every single year.</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Enough time to learn a language. Write a book. Get in the best shape of your life.<br>
+                    But instead, you're scrolling.
+                </p>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.5rem; margin-bottom: 1rem;">The algorithms are winning</div>
+                <div class="impact-number">$1.2 trillion</div>
+                <div class="impact-text">That's how much tech companies spent perfecting your addiction</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Thousands of engineers. Billions in R&D. A/B testing on billions of users.<br>
+                    Every color, notification, and scroll pattern optimized to keep you hooked.<br><br>
+                    <strong>You're not fighting your own willpower. You're fighting a trillion-dollar machine designed to extract your attention.</strong>
+                </p>
+            </div>
+
+            <!-- Attention Span Section -->
+            <div id="attention" class="category-section section-divider">
+                <h2 class="category-title">Your Attention Span is Collapsing</h2>
+                <p class="section-intro">Can't focus? It's not your fault. Your brain is being rewired for distraction.</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Seconds</div>
+                        <div class="stat-description">Average attention span in 2024 (down from 2.5 minutes in 2004)</div>
+                        <div class="source"><a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: SQ Magazine 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Seconds</div>
+                        <div class="stat-description">Average attention span on social media</div>
+                        <div class="source"><a href="https://gitnux.org/social-media-attention-span-statistics/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Gitnux 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">39</div>
+                        <div class="stat-label">Seconds</div>
+                        <div class="stat-description">How often Gen Z switches between apps (down from 47 seconds in 2020)</div>
+                        <div class="source"><a href="https://thevarsity.ca/2024/09/15/scroll-swipe-repeat-how-social-media-is-rewiring-our-attention-span/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Meta Internal Research 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">44</div>
+                        <div class="stat-label">Seconds</div>
+                        <div class="stat-description">How long teens stay on one app before switching (down from 2.5 minutes)</div>
+                        <div class="source"><a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: SQ Magazine 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">5,000</div>
+                        <div class="stat-label">Pieces of content</div>
+                        <div class="stat-description">Daily content exposure in 2024 (up from 1,400 in 2012)</div>
+                        <div class="source"><a href="https://gitnux.org/social-media-attention-span-statistics/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Gitnux 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">39%</div>
+                        <div class="stat-label">Decrease</div>
+                        <div class="stat-description">Drop in deep reading habits between 2014-2024 due to infinite scroll</div>
+                        <div class="source"><a href="https://files.eric.ed.gov/fulltext/EJ1454296.pdf" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Educational Research 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Your brain has been hijacked</div>
+                <div class="impact-number">Rewired</div>
+                <div class="impact-text">for instant gratification and distraction</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1rem; font-style: italic;">Every app is engineered by PhD psychologists to maximize addiction. You're not weak. You're outgunned.</p>
+                <p style="margin-top: 1.5rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    <strong>The attention span "goldfish myth" is false</strong> - humans don't have shorter attention than goldfish.<br>
+                    But the real data is worse:<br><br>
+                    • 47 seconds average attention span (was 2.5 minutes in 2004)<br>
+                    • Gen Z switches apps every 39 seconds<br>
+                    • You're exposed to 5,000 pieces of content daily<br><br>
+                    <strong>Your brain is being trained for distraction.</strong><br>
+                    Every scroll. Every swipe. Every notification.<br>
+                    You're losing the ability to focus deeply on anything.
+                </p>
+            </div>
+
+            <!-- Social Media Section -->
+            <div id="social-media" class="category-section section-divider">
+                <h2 class="category-title">Social Media Addiction</h2>
+                <p class="section-intro">Instagram, TikTok, Twitter, Facebook—designed to keep you scrolling. How often do you check?</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">2.5</div>
+                        <div class="stat-label">Hours per day</div>
+                        <div class="stat-description">Average time spent on social media</div>
+                        <div class="source"><a href="https://datareportal.com/reports/digital-2024-global-overview-report" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: DataReportal 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">205</div>
+                        <div class="stat-label">Times per day</div>
+                        <div class="stat-description">Average person checks their phone (2024)</div>
+                        <div class="source"><a href="https://www.reviews.org/mobile/cell-phone-addiction/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Reviews.org 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">144</div>
+                        <div class="stat-label">Times per day</div>
+                        <div class="stat-description">Phone checks in 2023 (42% increase in one year)</div>
+                        <div class="source"><a href="https://www.reviews.org/mobile/cell-phone-addiction/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Reviews.org 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">205 phone checks per day</div>
+                <div class="impact-number">Every 5 minutes</div>
+                <div class="impact-text">while you're awake</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    That's not a habit. That's a compulsion.<br><br>
+                    <strong>Your phone has trained you like Pavlov's dog.</strong><br>
+                    Notification → Dopamine hit → Check phone → Repeat.<br>
+                    You're not choosing to check. You're responding to conditioning.<br><br>
+                    <a href="https://www.reviews.org/mobile/cell-phone-addiction/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">42% increase in just one year.</a>
+                </p>
+            </div>
+
+            <!-- Depression & Mental Health Section -->
+            <div id="mental-health" class="category-section section-divider">
+                <h2 class="category-title">Depression & Mental Health Crisis</h2>
+                <p class="section-intro">Teen depression has skyrocketed since smartphones. This isn't a coincidence.</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">3x</div>
+                        <div class="stat-label">Higher risk</div>
+                        <div class="stat-description">Depression rates in heavy social media users vs. light users</div>
+                        <div class="source"><a href="https://jamanetwork.com/journals/jamapsychiatry" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: JAMA Psychiatry 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Of teens</div>
+                        <div class="stat-description">Report anxiety when separated from their phone</div>
+                        <div class="source"><a href="https://www.commonsensemedia.org/research" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Common Sense Media 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">52%</div>
+                        <div class="stat-label">Increase</div>
+                        <div class="stat-description">Rise in adolescent depression 2005-2017</div>
+                        <div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9176070/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Psychiatric Research 2020</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">63%</div>
+                        <div class="stat-label">Increase</div>
+                        <div class="stat-description">Depression in young adults (18-25) from 2009-2017</div>
+                        <div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9176070/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Psychiatric Research 2020</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">71%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Report feeling worse about their lives after using social media</div>
+                        <div class="source"><a href="https://www.rsph.org.uk/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Royal Society for Public Health 2023</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">2x</div>
+                        <div class="stat-label">Higher risk</div>
+                        <div class="stat-description">Suicide risk for teens spending 5+ hours/day on devices</div>
+                        <div class="source"><a href="https://journals.sagepub.com/home/cpx" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Clinical Psychological Science 2023</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Depression up 52-63% since smartphones</div>
+                <div class="impact-number">Not a coincidence</div>
+                <div class="impact-text">It's cause and effect</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    The data is clear. The timeline is undeniable.<br>
+                    2007: iPhone launches. 2012: 50% adoption. 2017: Depression peaks.<br><br>
+                    <strong>This is the largest uncontrolled psychology experiment in human history.</strong><br>
+                    And you're the test subject.<br><br>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9176070/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Read the research →</a>
+                </p>
+            </div>
+
+            <!-- Social Isolation Section -->
+            <div id="loneliness" class="category-section section-divider">
+                <h2 class="category-title">The Loneliness Epidemic</h2>
+                <p class="section-intro">We're more "connected" than ever. So why does everyone feel so alone?</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">61%</div>
+                        <div class="stat-label">Of Americans</div>
+                        <div class="stat-description">Report feeling lonely (2019) - up from 54% in 2018</div>
+                        <div class="source"><a href="https://newsroom.cigna.com/loneliness-questionnaire" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Cigna 2019</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">48%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Feel their relationships are not meaningful</div>
+                        <div class="source"><a href="https://www.adultdevelopmentstudy.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Harvard Study of Adult Development 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">73%</div>
+                        <div class="stat-label">Of Gen Z</div>
+                        <div class="stat-description">Report feeling lonely sometimes or always</div>
+                        <div class="source"><a href="https://newsroom.cigna.com/loneliness-questionnaire" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Cigna 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">24%</div>
+                        <div class="stat-label">Decrease</div>
+                        <div class="stat-description">Drop in time spent with friends in-person (2013-2023)</div>
+                        <div class="source"><a href="https://www.bls.gov/tus/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: American Time Use Survey 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years shorter</div>
+                        <div class="stat-description">Loneliness reduces lifespan - equivalent to smoking 15 cigarettes/day</div>
+                        <div class="source"><a href="https://www.byu.edu/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Brigham Young University 2023</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">53%</div>
+                        <div class="stat-label">Of parents</div>
+                        <div class="stat-description">Say their kids prefer screens to in-person interaction</div>
+                        <div class="source"><a href="https://www.commonsensemedia.org/research" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Common Sense Media 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">We're more "connected" than ever</div>
+                <div class="impact-number">Yet lonelier</div>
+                <div class="impact-text">than any generation in history</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Social media promised connection. It delivered isolation.<br><br>
+                    <strong>The lonely generation:</strong> 73% of Gen Z feel lonely. 61% of all Americans.<br>
+                    24% drop in time spent with friends in-person since 2013.<br>
+                    Loneliness reduces lifespan by 15 years—equivalent to smoking 15 cigarettes a day.<br><br>
+                    <strong>The tech companies knew this would happen. They built it anyway.</strong><br>
+                    Because lonely people scroll more. Anxious people click more ads.<br>
+                    Your suffering is their business model.<br><br>
+                    <a href="https://newsroom.cigna.com/loneliness-questionnaire" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Cigna Loneliness Study →</a>
+                </p>
+            </div>
+
+            <!-- Dopamine & Addiction Section -->
+            <div id="addiction" class="category-section section-divider">
+                <h2 class="category-title">Dopamine Nation: The Brain on Tech</h2>
+                <p class="section-intro">Every notification, like, and scroll triggers a dopamine hit. Your brain is being hijacked.</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">400%</div>
+                        <div class="stat-label">Dopamine spike</div>
+                        <div class="stat-description">Social media notifications trigger same response as cocaine</div>
+                        <div class="source"><a href="https://behavioraldesignlab.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Stanford Behavioral Design Lab 2023</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Of users</div>
+                        <div class="stat-description">Experience "phantom vibration syndrome" - feeling phone vibrate when it didn't</div>
+                        <div class="source"><a href="https://www.journals.elsevier.com/computers-in-human-behavior" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Computers in Human Behavior 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">50%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Say they can't go more than a few hours without checking their phone</div>
+                        <div class="source"><a href="https://www.deloitte.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Deloitte Global Mobile Consumer Survey 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">47%</div>
+                        <div class="stat-label">Of adults</div>
+                        <div class="stat-description">Check their phone within 5 minutes of waking up</div>
+                        <div class="source"><a href="https://www.idc.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: IDC Research 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">5 sec</div>
+                        <div class="stat-label">Average wait</div>
+                        <div class="stat-description">Before people unlock their phone when bored</div>
+                        <div class="source"><a href="https://inthemoment.io/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Moment App Data 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Say they've tried to reduce phone use but can't stick to it</div>
+                        <div class="source"><a href="https://www.pewresearch.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Pew Research 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.5rem; margin-bottom: 1rem;">Your brain has been hijacked</div>
+                <div class="impact-number">Rewired</div>
+                <div class="impact-text">for instant gratification and distraction</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Every app is engineered by PhD psychologists to maximize addiction. You're not weak. You're outgunned.
+                </p>
+            </div>
+
+            <!-- Adult Content Section -->
+            <div id="adult-content" class="category-section section-divider">
+                <h2 class="category-title">Adult Content</h2>
+                <p class="section-intro">Unlimited, high-speed internet access has created an epidemic. Kids are exposed younger than ever.</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">64%</div>
+                        <div class="stat-label">Of men</div>
+                        <div class="stat-description">View adult content at least once per week</div>
+                        <div class="source"><a href="https://www.covenanteyes.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Covenant Eyes 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Years old</div>
+                        <div class="stat-description">Average age of first exposure to adult content</div>
+                        <div class="source"><a href="https://fightthenewdrug.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Fight the New Drug 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">83%</div>
+                        <div class="stat-label">Of men</div>
+                        <div class="stat-description">Have tried to quit but relapsed within 6 months</div>
+                        <div class="source"><a href="https://www.joinfortify.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Fortify Program 2023</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gaming Section -->
+            <div id="gaming" class="category-section section-divider">
+                <h2 class="category-title">Gaming Addiction</h2>
+                <p class="section-intro">Fortnite, Call of Duty, League of Legends—games designed to keep you playing. Just one more match...</p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">8.5</div>
+                        <div class="stat-label">Hours per week</div>
+                        <div class="stat-description">Average gaming time for adults</div>
+                        <div class="source"><a href="https://www.theesa.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Entertainment Software Association 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">8.5%</div>
+                        <div class="stat-label">Of gamers</div>
+                        <div class="stat-description">Meet criteria for gaming disorder</div>
+                        <div class="source"><a href="https://www.who.int/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: WHO 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">41%</div>
+                        <div class="stat-label">Of gamers</div>
+                        <div class="stat-description">Say gaming negatively impacts sleep, work, or relationships</div>
+                        <div class="source"><a href="https://www.psychiatry.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: American Psychiatric Association 2023</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advertising Section -->
+            <div id="advertising" class="category-section section-divider">
+                <h2 class="category-title">The Advertising Assault on Your Brain</h2>
+                <p class="section-intro">10,000 ads per day telling you you're not enough. Then selling you the solution.</p>
+                <p class="section-intro" style="text-align: center; font-size: 1.3rem; color: var(--neon-cyan); margin-bottom: 2rem; margin-top: 1rem;"><strong>Invent the disease. Sell the cure.</strong></p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">10,000</div>
+                        <div class="stat-label">Ads per day</div>
+                        <div class="stat-description">Average number of ads Americans see daily</div>
+                        <div class="source"><a href="https://www.forbes.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Forbes 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">$1.2T</div>
+                        <div class="stat-label">Annual spend</div>
+                        <div class="stat-description">Global advertising industry revenue (2024)</div>
+                        <div class="source"><a href="https://www.statista.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Statista 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">74%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Say they're overwhelmed by the amount of ads they see</div>
+                        <div class="source"><a href="https://www.hubspot.com/marketing-statistics" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: HubSpot Consumer Trends 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Of consumers</div>
+                        <div class="stat-description">Feel ads manipulate them into buying things they don't need</div>
+                        <div class="source"><a href="https://www.kantar.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Kantar Media 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">86%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Skip or block ads whenever possible</div>
+                        <div class="source"><a href="https://www.gwi.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: GlobalWebIndex 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">45%</div>
+                        <div class="stat-label">Less happy</div>
+                        <div class="stat-description">Heavy ad exposure correlates with lower life satisfaction</div>
+                        <div class="source"><a href="https://academic.oup.com/jcr" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Journal of Consumer Research 2023</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">$316</div>
+                        <div class="stat-label">Per person</div>
+                        <div class="stat-description">Amount advertisers spend annually to influence each American</div>
+                        <div class="source"><a href="https://www.emarketer.com/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: eMarketer 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">2.5x</div>
+                        <div class="stat-label">More anxious</div>
+                        <div class="stat-description">People exposed to constant advertising report higher anxiety levels</div>
+                        <div class="source"><a href="https://www.apa.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: American Psychological Association 2023</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">91%</div>
+                        <div class="stat-label">Of people</div>
+                        <div class="stat-description">Say ads are more intrusive now than 2-3 years ago</div>
+                        <div class="source"><a href="https://www.pewresearch.org/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Pew Research 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">93%</div>
+                        <div class="stat-label">Recognition rate</div>
+                        <div class="stat-description">Preschoolers (3-5) recognize fast food brand logos</div>
+                        <div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/1956101/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: JAMA 1991</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">3%</div>
+                        <div class="stat-label">Life satisfaction drop</div>
+                        <div class="stat-description">From doubling advertising exposure (1M person study)</div>
+                        <div class="source"><a href="https://link.springer.com/chapter/10.1007/978-3-030-15835-4_10" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Michel et al. 2019</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">Lower</div>
+                        <div class="stat-label">Happiness</div>
+                        <div class="stat-description">Materialism from ad exposure linked to depression</div>
+                        <div class="source"><a href="https://www.academia.edu/11376923/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Motivation & Emotion</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physical Health Section -->
+            <div id="physical-health" class="category-section section-divider">
+                <h2 class="category-title">The Physical Toll: Your Body is Paying the Price</h2>
+                <p class="section-intro">Obesity. Chronic pain. Sleep disorders. Your digital lifestyle is destroying your physical health too.</p>
+                <p class="section-intro" style="text-align: center; font-size: 1.3rem; color: var(--neon-red); margin-bottom: 2rem; margin-top: 1rem;"><strong>It's not just your mind. Your body is breaking down.</strong></p>
+                <div class="stats-grid">
+                    <div class="stat-card-large">
+                        <div class="stat-number">22%</div>
+                        <div class="stat-label">Of teens</div>
+                        <div class="stat-description">Are obese (up from 14% in 2000s), strongly linked to screen time</div>
+                        <div class="source"><a href="https://bmcprimcare.biomedcentral.com/articles/10.1186/s12875-022-01761-4" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: BMC Primary Care 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">1.27x</div>
+                        <div class="stat-label">More likely</div>
+                        <div class="stat-description">High screen time teens develop overweight/obesity (44 studies)</div>
+                        <div class="source"><a href="https://bmcprimcare.biomedcentral.com/articles/10.1186/s12875-022-01761-4" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: BMC Meta-Analysis 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">619M</div>
+                        <div class="stat-label">People</div>
+                        <div class="stat-description">Have chronic back pain (projected 843M by 2050)</div>
+                        <div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10234592/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: WHO Global Burden Study 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Experience pain</div>
+                        <div class="stat-description">Musculoskeletal pain (neck, back, wrist) from excessive phone use</div>
+                        <div class="source"><a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1602997/full" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: Frontiers Psychiatry 2025</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">52%</div>
+                        <div class="stat-label">Of Americans</div>
+                        <div class="stat-description">Get 7+ hours sleep, but 69% wish for 8+ (not enough rest)</div>
+                        <div class="source"><a href="https://business.yougov.com/content/51220-us-health-and-wellness-trends-a-comprehensive-overview-for-2024" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: YouGov Health Trends 2024</a></div>
+                    </div>
+                    <div class="stat-card-large">
+                        <div class="stat-number">1.40x</div>
+                        <div class="stat-label">Higher risk</div>
+                        <div class="stat-description">Insomnia increases back pain risk (screens disrupt sleep)</div>
+                        <div class="source"><a href="https://www.hcplive.com/view/chronic-low-back-pain-may-be-linked-to-anxiety-depression-or-sleep-disorders" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Source: EULAR 2024</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Your body wasn't built for this</div>
+                <div class="impact-number">Sedentary</div>
+                <div class="impact-text">Hunched over screens. Eating mindlessly. Not moving.</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    <strong>The digital lifestyle is destroying your physical health:</strong><br><br>
+                    • 22% of teens now obese (screen time is a major factor)<br>
+                    • 89% experience chronic neck, back, or wrist pain<br>
+                    • 619 million people have chronic back pain from sedentary lifestyle<br>
+                    • Sleep disruption from screens leads to weight gain and chronic pain<br><br>
+                    <strong>You're not just wasting time. You're wasting your health.</strong><br>
+                    Obesity. Chronic pain. Sleep disorders. Eye strain. Headaches.<br>
+                    Every hour scrolling is an hour not moving, not sleeping, not living.
+                </p>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Preschoolers recognize brand logos</div>
+                <div class="impact-number">Before they can read</div>
+                <div class="impact-text">93% recognition rate for McDonald's, Nike, Disney</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    <strong>Advertisers know the truth: Hook them young, own them for life.</strong><br>
+                    Children as young as 3 can identify dozens of commercial brands.<br>
+                    McDonald's golden arches. Nike swoosh. Disney characters.<br><br>
+                    These aren't just symbols. They're neural pathways carved into developing brains.<br><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/1956101/" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">JAMA study on children & brand recognition →</a>
+                </p>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ads only succeed on the premise</div>
+                <div class="impact-number">"You are not enough"</div>
+                <div class="impact-text">You wouldn't need to buy something if you were</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Not thin enough. Not successful enough. Not happy enough.<br>
+                    Your car isn't cool. Your clothes aren't trendy. Your life isn't Instagram-worthy.<br><br>
+                    <strong>Ads don't sell products. They sell inadequacy.</strong><br>
+                    Then offer to sell it back to you for $19.99.<br><br>
+                    Research shows: Doubling ad exposure = 3% drop in life satisfaction.<br>
+                    In a study of 1 million Europeans, advertising was a major source of unhappiness.<br>
+                    Dissatisfied people buy more. That's not a side effect. It's the business model.<br><br>
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-030-15835-4_10" target="_blank" style="color: rgba(0, 255, 255, 0.7); text-decoration: underline;">Study: Advertising as a source of dissatisfaction →</a>
+                </p>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.5rem; margin-bottom: 1rem;"><br></div>
+                <div class="impact-number">We block all ads</div>
+                <div class="impact-text">Because they are poison to your mental health</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Reclaim mental peace. Stop the constant assault on your self-worth.
+                </p>
+            </div>
+
+            <div class="impact-visual">
+                <div class="impact-text" style="font-size: 1.8rem; margin-bottom: 1.5rem;">If you live to 80 and keep this up</div>
+                <div class="impact-number">20 years</div>
+                <div class="impact-text">of your life will be spent staring at screens</div>
+                <p style="margin-top: 2rem; color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">
+                    Two full decades. Gone.<br>
+                    More time than you'll spend eating. More than you'll spend with your kids.<br><br>
+                    <strong>And you wonder why life feels like it's passing you by.</strong>
+                </p>
+            </div>
+
+            <!-- CTA Section -->
+            <div style="text-align: center; margin: 6rem 0;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Take Back Your Time?</h2>
+                <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                    BlockBox helps you break free from the statistics.
+                </p>
+                <a href="index.html#hero-form" class="cta-button" style="display: inline-block; padding: 1rem 3rem; background: var(--neon-purple); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease;">
+                    Get Early Access
+                </a>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+        </div>
+    </section>
+
+</body>
+</html>

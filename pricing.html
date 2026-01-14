@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>BlockBox Pricing - One-Time Purchase, No Subscriptions</title>
+    <meta name="description" content="BlockBox is a one-time purchase. No monthly fees, no subscriptions. Own the device, control your digital life. Pre-order pricing available.">
+    <meta name="keywords" content="blockbox price, hardware blocker cost, no subscription internet filter, one-time purchase parental control">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BlockBox Pricing - Own It Forever">
+    <meta property="og:description" content="One-time purchase. No monthly fees. Own the device, control your life.">
+
+    <link rel="canonical" href="https://jadenschwartz.github.io/blockbox-landing/pricing.html">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .pricing-hero {
+            min-height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .pricing-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-purple);
+            transform: translateX(-5px);
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-blue);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-amount {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: var(--text-tertiary);
+            margin-bottom: 2rem;
+            text-decoration: line-through;
+        }
+
+        .price-note {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .price-features {
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .price-features h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .price-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-features li {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .price-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table {
+            margin: 4rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-table h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .comparison-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .comparison-item.blockbox {
+            border-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .comparison-item.others {
+            border-color: var(--border);
+        }
+
+        .comparison-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-item.blockbox h3 {
+            color: var(--accent-blue);
+        }
+
+        .comparison-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-item.blockbox .comparison-price {
+            color: var(--accent-blue);
+        }
+
+        .comparison-item.others .comparison-price {
+            color: #ff0055;
+        }
+
+        .comparison-detail {
+            font-size: 1rem;
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-features {
+            text-align: left;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .faq-section {
+            margin: 5rem 0 3rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .waitlist-note {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 2px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .waitlist-note p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .waitlist-note strong {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-amount {
+                font-size: 3rem;
+            }
+        }
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav" class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">BlockBox</a>
+            <div class="nav-links">
+                <a href="index.html#problem" class="nav-link">The Problem</a>
+                <a href="index.html#features" class="nav-link">What We Block</a>
+                <a href="stats.html" class="nav-link">Why This Matters</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="index.html#cta" class="nav-link cta-nav">Get Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple, Honest Pricing</h1>
+            <p>One device. One price. No subscriptions. Own it forever.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="problem-section">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to home</a>
+
+            <!-- Main Pricing Card -->
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <div class="price-badge">Early Access Pre-Order</div>
+                    <div class="price-amount">$199</div>
+                    <div class="price-period">Regular price: $299</div>
+                    <div class="price-note">One-time purchase. No monthly fees. Ever.</div>
+
+                    <a href="index.html#hero-form" class="cta-button">Join Waitlist</a>
+
+                    <div class="price-features">
+                        <h3>What's Included</h3>
+                        <ul>
+                            <li>BlockBox hardware device</li>
+                            <li>All cables and setup materials</li>
+                            <li>Mobile & desktop configuration app</li>
+                            <li>Lifetime filter database updates (free forever)</li>
+                            <li>Free firmware updates</li>
+                            <li>Email support</li>
+                            <li>30-day money-back guarantee</li>
+                            <li>2-year hardware warranty</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="waitlist-note">
+                <p><strong>Pre-order pricing ends soon.</strong> Early supporters save $100. Join the waitlist to lock in this price.</p>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="comparison-table">
+                <h2>Why BlockBox Saves You Money</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-item blockbox">
+                        <h3>BlockBox</h3>
+                        <div class="comparison-price">$199</div>
+                        <div class="comparison-detail">One-time purchase</div>
+                        <div class="comparison-features">
+                            ✓ Own it forever<br>
+                            ✓ No monthly fees<br>
+                            ✓ Works on all devices<br>
+                            ✓ Free updates for life<br>
+                            ✓ Privacy-first (local filtering)<br>
+                            ✓ Can't be easily bypassed<br><br>
+                            <strong>5-year cost: $199</strong>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item others">
+                        <h3>Software Subscriptions</h3>
+                        <div class="comparison-price">$10-15/mo</div>
+                        <div class="comparison-detail">Per month, per device</div>
+                        <div class="comparison-features">
+                            ✗ Requires ongoing payment<br>
+                            ✗ Only works on one device<br>
+                            ✗ Easily uninstalled<br>
+                            ✗ Data sent to cloud servers<br>
+                            ✗ Subscription fatigue<br>
+                            ✗ Disabled in 10 seconds<br><br>
+                            <strong>5-year cost: $600-900</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Pricing FAQ</h2>
+
+                <div class="faq-item">
+                    <h3>Is there really no subscription?</h3>
+                    <p>Correct. You pay once for the device. Filter database updates, firmware updates, and basic email support are free for life.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I need to block more devices later?</h3>
+                    <p>BlockBox works at the network level—it automatically covers ALL devices connected to your home Wi-Fi. No extra cost whether you have 1 device or 20.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need to buy one for each family member?</h3>
+                    <p>No. One BlockBox device covers your entire household. You can create multiple user profiles with different filtering rules for each family member.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the catch?</h3>
+                    <p>No catch. We believe you should own the tools that help you live better. Subscriptions create dependency. We'd rather earn your trust and referrals than lock you into monthly payments.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Will the price go up later?</h3>
+                    <p>Yes. The $199 pre-order price is for early supporters only. Regular retail price will be $299 after launch.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is there a money-back guarantee?</h3>
+                    <p>Yes. 30-day money-back guarantee, no questions asked. If BlockBox doesn't work for you, return it for a full refund.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What about warranty?</h3>
+                    <p>2-year hardware warranty included. If the device fails within 2 years, we'll replace it free of charge.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I buy multiple devices?</h3>
+                    <p>Yes. Most households only need one, but if you have a complex network setup (e.g., separate guest network, vacation home), you can purchase additional units at the same pre-order price.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>When will it ship?</h3>
+                    <p>We're currently in manufacturing. Expected ship date is Q2 2026. Waitlist members will be notified first and can lock in pre-order pricing.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What payment methods do you accept?</h3>
+                    <p>We'll accept all major credit cards, PayPal, and Apple Pay. Payment will be collected when the device is ready to ship, not when you join the waitlist.</p>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="text-align: center; margin: 5rem 0 3rem 0;">
+                <h2>Ready to Own Your Digital Freedom?</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">$199 pre-order pricing. No subscriptions. Own it forever.</p>
+                <a href="index.html#hero-form" class="cta-button">Join Waitlist</a>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to home</a>
+        </div>
+    </section>
+
+    <script src="scroll-animations.js"></script>
+</body>
+</html>
